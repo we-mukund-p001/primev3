@@ -81,7 +81,7 @@
             clip-rule="evenodd"/>
     </svg>
   </NuxtLink>
-  <NuxtLink exact-active-class="bg-white" to="/"
+  <NuxtLink exact-active-class="bg-white" to="/information"
        class="no-underline text-gray-500 text-base  flex align-items-start justify-content-center lg:justify-content-between lg:px-4  py-2 lg:py-0 lg:border-round-xl cursor-pointer hover:bg-white"
        >
     <div class="flex align-items-start  justify-content-center  gap-2">
