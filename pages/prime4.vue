@@ -1,8 +1,8 @@
 <template>
 
-  <div class=" flex  align-items-center justify-content-between  w-full px-4 ">
+  <div class=" flex  align-items-center justify-content-between  w-full px-2 md:px-4 ">
 <!--    left-->
-    <div class="flex flex-row align-items-center gap-2 ">
+    <div class="flex flex-row align-items-center gap-0 md:gap-2 ">
     <div>
     <Button  severity="secondary" icon="pi pi-times" class="bg-white hover:bg-gray-100 border-none " />
     </div>
@@ -13,19 +13,19 @@
       <path fill="currentColor" d="M10.568 6.49c-.012.014-.555-.503-.568-.49l-4 4c-.013.013.504.556.49.568l9.588 9.587a2.883 2.883 0 1 0 4.078-4.077z" />
     </svg>
     <div>
-      <p class="my-0 text-base font-semibold ">LA Product Designs</p>
-      <p class="my-0 text-base text-gray-500 font-light ">Draft campaign</p>
+      <p class="my-0 text-xs md:text-base font-semibold ">LA Product Designs</p>
+      <p class="my-0 text-xs md:text-base text-gray-500 font-light ">Draft campaign</p>
     </div>
     <i class="pi pi-pencil text-gray-500 hover:text-blue-500 cursor-pointer"/>
     </div>
 
 <!--    right-->
-    <div class="flex flex-row  align-items-center gap-2">
+    <div class="md:flex hidden flex-row  align-items-center gap-2">
     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32">
       <path fill="currentColor" d="M2 5v16h4v5.094l1.625-1.313L12.344 21H22V5zm2 2h16v12h-8.344l-.281.219L8 21.906V19H4zm20 2v2h4v12h-4v2.906L20.344 23h-7.5l-2.5 2h9.312L26 30.094V25h4V9z" />
     </svg>
-    <p class="font-bold hover:underline cursor-pointer ">Feedback</p>
-    <p class="text-gray-500 ">Draft saved 10 seconds ago</p>
+    <p class="font-bold hover:underline cursor-pointer text-xs md:text-base ">Feedback</p>
+    <p class="text-gray-500 text-xs md:text-base">Draft saved 10 seconds ago</p>
     </div>
   </div>
 
@@ -33,7 +33,7 @@
 <!--main-->
 <div class=" relative ">
   <Stepper :pt="{
-        nav: {class: 'w-5 m-auto '},
+        nav: {class: ' w-11 md:w-9 lg:w-7  xl:w-5 m-auto '},
         root:{class: ' '},
         panelContainer:{class: '  '},
         stepperpanel:{class:'  '},
@@ -42,7 +42,7 @@
       }">
     <StepperPanel header="Header I">
       <template #header>
-        <div class="flex flex-row align-items-center  cursor-pointer  p-2 border-round-3xl gap-1"
+        <div class="flex flex-row align-items-center  cursor-pointer  p-2 border-round-3xl gap-1 text-xs md:text-sm lg:text-base "
              :class="!glowBtn.one? ' border-1 bg-purple-100':''"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
@@ -65,7 +65,7 @@
     </StepperPanel>
     <StepperPanel header="Header II">
       <template #header>
-        <div class="flex flex-row align-items-center cursor-pointer  p-2 border-round-3xl gap-1"
+        <div class="flex flex-row align-items-center cursor-pointer  p-2 border-round-3xl gap-1 text-xs md:text-sm lg:text-base"
              :class="!glowBtn.two? ' border-1 bg-purple-100':''"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
@@ -330,7 +330,7 @@
     </StepperPanel>
     <StepperPanel header="Header III">
       <template #header>
-        <div class="flex flex-row align-items-center   cursor-pointer  p-2 border-round-3xl gap-1"
+        <div class="flex flex-row align-items-center   cursor-pointer  p-2 border-round-3xl gap-1 text-xs md:text-sm lg:text-base"
              :class="!glowBtn.three? ' border-1 bg-purple-100':''"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
@@ -351,7 +351,7 @@
     </StepperPanel>
     <StepperPanel header="Header IV">
       <template #header>
-        <div class="flex flex-row align-items-center   cursor-pointer p-2 border-round-3xl gap-1"
+        <div class="flex flex-row align-items-center   cursor-pointer p-2 border-round-3xl gap-1 text-xs md:text-sm lg:text-base"
         :class="!glowBtn.four? ' border-1 bg-purple-100':''"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 256 256">
@@ -370,7 +370,7 @@
       </template>
     </StepperPanel>
   </Stepper>
-  <Button label="Secondary" severity="secondary" class="flex gap-2 absolute" style="bottom: 95%; right:2%" text raised>
+  <Button label="Secondary" severity="secondary" class="lg:flex hidden gap-2 absolute " style="bottom: 95%; right:2%" text raised>
     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256">
       <path fill="currentColor" d="M234.49 111.07L90.41 22.94A20 20 0 0 0 60 39.87v176.26a20 20 0 0 0 30.41 16.93l144.08-88.13a19.82 19.82 0 0 0 0-33.86M84 208.85V47.15L216.16 128Z" />
     </svg>
