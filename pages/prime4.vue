@@ -240,7 +240,7 @@
               </template>
             </Card>
             <div class="border-1 py-2 border-gray-400"></div>
-            <Card>
+            <Card class="mb-8">
               <template #title>
                 <div class=" relative flex flex-column pl-4">
                   <div class="flex justify-content-between">
@@ -297,11 +297,10 @@
 
         </div>
 
-        <div class="flex pt-4 justify-content-between fixed ">
-          <Button label="Back" severity="secondary" icon="pi pi-arrow-left" @click="prevCallback" >
+        <div class="flex py-3 justify-content-between bg-white fixed px-3 " style="bottom:0%; right:0%; left:0% ">
+          <Button label="Back" severity="secondary" class=" border-1 border-gray-400" icon="pi pi-arrow-left" @click="prevCallback" >
             <i class="pi pi-angle-left" ></i>
             <p class="my-0 mx-5">Previous</p>
-
           </Button>
           <div class="flex align-items-center gap-2">
             <p class="text-sm font-semibold my-0">Your Campaign will be sent to</p>
@@ -317,7 +316,7 @@
               <p class="my-0 font-semibold">24 Contacts</p></div>
 
           </div>
-          <Button label="Next"  icon="pi pi-angle-right" iconPos="right" @click="nextCallback" >
+          <Button label="Next"  icon="pi pi-angle-right" iconPos="right" class="bg-purple-600 border-none hover:bg-purple-700" @click="nextCallback" >
 
             <p class="my-0 mx-5">Next</p>
             <i class="pi pi-angle-right" ></i>
