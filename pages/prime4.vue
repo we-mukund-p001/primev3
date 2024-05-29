@@ -35,10 +35,8 @@
   <Stepper :pt="{
         nav: {class: ' w-11 md:w-9 lg:w-7  xl:w-5 m-auto '},
         root:{class: ' '},
-        panelContainer:{class: '  '},
+        panelContainer:{class: ' '},
         stepperpanel:{class:'  '},
-
-
       }">
     <StepperPanel header="Header I">
       <template #header>
@@ -75,9 +73,9 @@
         </div>
       </template>
       <template #content="{ prevCallback, nextCallback }" >
-        <div class="  flex justify-content-center bg-gray-100">
-          <div class="flex flex-column  align-items-center w-5 ">
-        <div class="flex flex-row align-items-center bg-white hover:bg-purple-50 cursor-pointer  p-2 border-round-3xl gap-1 w-4 mt-4">
+        <div class=" flex justify-content-center bg-gray-100">
+          <div class="flex flex-column  align-items-center md:w-8 lg:w-5 ">
+        <div class="flex flex-row align-items-start text-xs lg:text-base bg-white hover:bg-purple-50 cursor-pointer p-2 border-round-3xl gap-1 w-5 md:w-4 mt-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="text-purple-500" width="1.5em" height="1.5em" viewBox="0 0 24 24">
             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m15.238 10.81l-.569 1.694a4.325 4.325 0 0 1-2.757 2.76l-1.713.569a.288.288 0 0 0 0 .548l1.713.569a4.318 4.318 0 0 1 2.736 2.738l.568 1.715a.287.287 0 0 0 .548 0l.59-1.694a4.323 4.323 0 0 1 2.735-2.738l1.714-.569a.288.288 0 0 0 0-.548l-1.692-.59a4.318 4.318 0 0 1-2.757-2.76l-.569-1.715a.289.289 0 0 0-.448-.126a.288.288 0 0 0-.099.148m-8.43-4.914l-.413 1.231a3.145 3.145 0 0 1-2.006 2.007l-1.246.414a.21.21 0 0 0 0 .398l1.246.415a3.14 3.14 0 0 1 1.99 1.99l.413 1.248a.21.21 0 0 0 .398 0l.43-1.232a3.145 3.145 0 0 1 1.99-1.99l1.245-.415a.21.21 0 0 0 0-.398l-1.23-.43A3.141 3.141 0 0 1 7.62 7.128l-.414-1.247a.21.21 0 0 0-.398.016m7.849-3.422l-.207.616a1.572 1.572 0 0 1-1.002 1.004l-.623.207a.104.104 0 0 0-.052.16a.104.104 0 0 0 .052.039l.623.207a1.57 1.57 0 0 1 .995.995l.206.624a.105.105 0 0 0 .2 0l.214-.616a1.573 1.573 0 0 1 .995-.995l.623-.207a.105.105 0 0 0 0-.2l-.615-.214a1.571 1.571 0 0 1-1.003-1.004l-.207-.624a.105.105 0 0 0-.199.008" />
           </svg>
@@ -85,9 +83,9 @@
         </div>
             <div class="border-1 py-2 border-gray-400"></div>
 
-        <Card>
+        <Card class="mx-2 md:mx-0">
           <template #title>
-            <div class=" relative flex flex-column pl-4">
+            <div class=" relative flex flex-column pl-1 md:pl-4">
             <div class="flex justify-content-between">
             <div class="flex align-items-center gap-2 ">
               <div class="flex  p-1 border-round-3xl shadow-1 " >
@@ -98,7 +96,7 @@
                 </g>
               </svg>
               </div>
-            <p class="text-base  font-semibold my-0">1.Email</p>
+            <p class="text-sm md:text-base  font-semibold my-0">1.Email</p>
             </div>
             <div class="flex align-items-center gap-3">
               <div class="flex gap-1">
@@ -108,7 +106,7 @@
                   <path d="M12 6v6l4 2" />
                 </g>
               </svg>
-              <p class="text-base my-0">Day 1</p>
+              <p class="text-sm md:text-base my-0">Day 1</p>
               </div>
                 <InputSwitch v-model="checked.one" />
               <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer" width="1em" height="1em" viewBox="0 0 16 16">
@@ -120,7 +118,7 @@
               </svg>
             </div>
             </div>
-            <p class="text-base text-gray-500 "> Subject: <span class="text-gray-900"> Reaching out </span></p>
+            <p class="text-sm md:text-base text-gray-500 "> Subject: <span class="text-gray-900"> Reaching out </span></p>
               <svg class="absolute cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" style="bottom:19%; right:100% " viewBox="0 0 24 24">
                 <g fill="none">
                   <path d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z" />
@@ -131,7 +129,7 @@
 
           </template>
           <template #content>
-            <div class="pl-4">
+            <div class="pl-1 md:pl-4 text-xs md:text-base">
             <p class="m-0">Hay {first_name},</p>
             <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed</p>
             </div>
@@ -139,11 +137,11 @@
         </Card>
 
               <div class="border-1 py-2 border-gray-400"></div>
-            <Card>
+            <Card  class="mx-2 md:mx-0">
               <template #title>
-                <div class=" relative flex flex-column pl-4">
-                  <div class="flex justify-content-between">
-                    <div class="flex align-items-center gap-2 ">
+                <div class=" relative flex flex-column pl-1 md:pl-4">
+                  <div class="flex flex-row justify-content-between">
+                    <div class="flex align-items-start gap-2 ">
                       <div class="flex  p-1 border-round-3xl shadow-1 " >
                         <svg xmlns="http://www.w3.org/2000/svg" class="text-blue-700" width="1em" height="1em" viewBox="0 0 48 48">
                           <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
@@ -152,7 +150,7 @@
                           </g>
                         </svg>
                       </div>
-                      <p class="text-base  font-semibold my-0">2.Follow-up-Email</p>
+                      <p class="text-sm md:text-base  font-semibold my-0">2.Follow-up Email</p>
                     </div>
                     <div class="flex align-items-center gap-3">
                       <div class="flex gap-1">
@@ -162,7 +160,7 @@
                             <path d="M12 6v6l4 2" />
                           </g>
                         </svg>
-                        <p class="text-base my-0">Day 4</p>
+                        <p class=" text-sm md:text-base my-0">Day 4</p>
                       </div>
                       <InputSwitch v-model="checked.two" />
                       <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer" width="1em" height="1em" viewBox="0 0 16 16">
@@ -174,9 +172,9 @@
                       </svg>
                     </div>
                   </div>
-                  <div class="flex flex-row align-items-center gap-2">
-                  <p class="text-base text-gray-500"> Subject: <span class="text-gray-900"> Reaching out </span></p>
-                    <div class=" text-xs border-1 py-1 px-2 border-round-3xl border-gray-200">Threaded Follow-up</div>
+                  <div class="flex flex-row align-items-center md:gap-2">
+                  <p class=" text-sm md:text-base text-gray-500"> Subject: <span class="text-gray-900"> Reaching out </span></p>
+                    <div class="md:flex hidden text-xs border-1 py-1 px-2 border-round-3xl border-gray-200">Threaded Follow-up</div>
                   <svg class="absolute cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" style="bottom:19%; right:100% " viewBox="0 0 24 24">
                     <g fill="none">
                       <path d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z" />
@@ -188,24 +186,24 @@
 
               </template>
               <template #content>
-                <div class="pl-4">
+                <div class="pl-1 md:pl-4 text-xs md:text-base">
                   <p class="m-0">Hay {first_name},</p>
                   <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed</p>
                 </div>
               </template>
             </Card>
             <div class="border-1 py-2 border-gray-400"></div>
-            <Card class="relative">
+            <Card class="relative  mx-2 md:mx-0 ">
               <template #title>
-                <div class="  flex flex-column pl-4">
+                <div class="flex flex-column pl-1 md:pl-4">
                   <div class="flex justify-content-between">
                     <div class="flex align-items-center gap-2">
-                      <div class="flex  p-1 border-round-3xl shadow-1 " >
+                      <div class="flex  p-1 border-round-3xl shadow-1 ">
                         <svg xmlns="http://www.w3.org/2000/svg" class="text-blue-500" width="0.88em" height="1em" viewBox="0 0 448 512">
                           <path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3M447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2c-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3c94 0 111.28 61.9 111.28 142.3V448z" />
                         </svg>
                       </div>
-                      <p class="text-base  font-semibold my-0">2.Connect - Automatic</p>
+                      <p class=" text-sm md:text-base  font-semibold my-0">2.Connect - Automatic</p>
                     </div>
                     <div class="flex align-items-center gap-3">
                       <div class="flex gap-1">
@@ -215,7 +213,7 @@
                             <path d="M12 6v6l4 2" />
                           </g>
                         </svg>
-                        <p class="text-base my-0">Day 10</p>
+                        <p class="text-sm md:text-base my-0">Day 10</p>
                       </div>
                       <InputSwitch v-model="checked.three" />
                       <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer" width="1em" height="1em" viewBox="0 0 16 16">
@@ -227,7 +225,7 @@
                       </svg>
                     </div>
                   </div>
-                  <svg class="absolute cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" style="bottom:50%; right:97% " viewBox="0 0 24 24">
+                  <svg class="absolute cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" style="bottom:50%; right:95% " viewBox="0 0 24 24">
                     <g fill="none">
                       <path d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z" />
                       <path fill="currentColor" d="M9 4.5a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3m1.5 7.5a1.5 1.5 0 1 0-3 0a1.5 1.5 0 0 0 3 0m0 6a1.5 1.5 0 1 0-3 0a1.5 1.5 0 0 0 3 0m6-6a1.5 1.5 0 1 0-3 0a1.5 1.5 0 0 0 3 0M15 16.5a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3M16.5 6a1.5 1.5 0 1 0-3 0a1.5 1.5 0 0 0 3 0" />
@@ -237,16 +235,16 @@
 
               </template>
               <template #content>
-                <div class="pl-4">
-                  <p class="m-0 font-bold text-gray-900">Connection message:</p>
-                  <p class="m-0">Hay {first_name}, Lorem ipsum dolor sit amet, consectetur adipisicing</p>
+                <div class="pl-1 md:pl-4">
+                  <p class="m-0 text-sm md:text-base font-bold text-gray-900 ">Connection message:</p>
+                  <p class="m-0 text-xs md:text-base">Hay {first_name}, Lorem ipsum dolor sit amet, consectetur adipisicing</p>
                 </div>
               </template>
             </Card>
             <div class="border-1 py-2 border-gray-400"></div>
-            <Card class="mb-8">
+            <Card class="mb-8 mx-2 md:mx-0">
               <template #title>
-                <div class=" relative flex flex-column pl-4">
+                <div class=" relative flex flex-column pl-1 md:pl-4">
                   <div class="flex justify-content-between">
                     <div class="flex align-items-center gap-2 ">
                       <div class="flex  p-1 border-round-3xl shadow-1 " >
@@ -257,7 +255,7 @@
                           </g>
                         </svg>
                       </div>
-                      <p class="text-base  font-semibold my-0">1.Email</p>
+                      <p class="text-sm md:text-base  font-semibold my-0">1.Email</p>
                     </div>
                     <div class="flex align-items-center gap-3">
                       <div class="flex gap-1">
@@ -267,7 +265,7 @@
                             <path d="M12 6v6l4 2" />
                           </g>
                         </svg>
-                        <p class="text-base my-0">Day 1</p>
+                        <p class="text-sm md:text-base my-0">Day 1</p>
                       </div>
                       <InputSwitch v-model="checked.four" />
                       <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer" width="1em" height="1em" viewBox="0 0 16 16">
@@ -279,7 +277,7 @@
                       </svg>
                     </div>
                   </div>
-                  <p class="text-base text-gray-500"> Subject: <span class="text-gray-900"> Reaching out </span></p>
+                  <p class="text-sm md:text-base text-gray-500"> Subject: <span class="text-gray-900"> Reaching out </span></p>
                   <svg class="absolute cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" style="bottom:19%; right:100% " viewBox="0 0 24 24">
                     <g fill="none">
                       <path d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z" />
@@ -290,7 +288,7 @@
 
               </template>
               <template #content>
-                <div class="pl-4">
+                <div class="pl-1 md:pl-4 text-xs md:text-base ">
                   <p class="m-0">Hay {first_name},</p>
                   <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed</p>
                 </div>
@@ -302,12 +300,12 @@
         </div>
 
         <div class="flex py-3 justify-content-between bg-white fixed px-3 " style="bottom:0%; right:0%; left:0% ">
-          <Button label="Back" severity="secondary" class=" border-1 border-gray-400" icon="pi pi-arrow-left" @click="prevCallback(); fObj.btn1()" >
+          <Button label="Back" severity="secondary" class=" bg-white " raised  icon="pi pi-arrow-left" @click="prevCallback(); fObj.btn1()" >
             <i class="pi pi-angle-left" ></i>
-            <p class="my-0 mx-5">Previous</p>
+            <p class="my-0 md:mx-5 text-xs md:text-base">Previous</p>
           </Button>
           <div class="flex align-items-center gap-2">
-            <p class="text-sm font-semibold my-0">Your Campaign will be sent to</p>
+            <p class=" md:flex hidden  text-xs  font-semibold my-0">Your Campaign will be sent to</p>
             <div class=" flex align-items-center gap-2 text-xs border-1 py-1 px-2 border-round-3xl border-purple-600 hover:bg-purple-200 bg-purple-100 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 20 20">
                 <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
@@ -322,7 +320,7 @@
           </div>
           <Button label="Next"  icon="pi pi-angle-right" iconPos="right" class="bg-purple-600 border-none hover:bg-purple-700" @click="nextCallback(); fObj.btn3()" >
 
-            <p class="my-0 mx-5">Next</p>
+            <p class="my-0  md:mx-5 text-xs md:text-base">Next</p>
             <i class="pi pi-angle-right" ></i>
           </Button>
         </div>
