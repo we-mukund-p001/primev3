@@ -310,16 +310,16 @@
             <div class="border-1 py-2 border-gray-400"></div>
 
 
-       <div @click="openMenu()" :class="!menu? 'mb-8':'mb-2 border-1 border-purple-500'" class=" py-2 px-2 border-round-2xl shadow-1 bg-white cursor-pointer ">
-         <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+       <div @click="openMenu()" :class="!menu? 'mb-8':'mb-2 border-1 border-purple-500'" class=" p-2 border-round-lg shadow-1 bg-white cursor-pointer ">
+         <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
            <path fill="currentColor" d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17s-7.6 17-17 17m0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15s15-6.7 15-15s-6.7-15-15-15" />
            <path fill="currentColor" d="M16 24h18v2H16z" />
            <path fill="currentColor" d="M24 16h2v18h-2z" />
          </svg>
        </div>
 
-      <div v-if="menu" class=" mb-8 flex gap-2 shadow-1 border-round-xl bg-white px-2 w-full justify-content-around align-items-center ">
-        <div class="flex flex-column align-items-center p-4 gap-2 ">
+      <div v-if="menu" class=" mb-8 flex gap-2 shadow-1 border-round-xl bg-white  w-full justify-content-around align-items-center ">
+        <div class="flex flex-column align-items-center hover:bg-gray-100 cursor-pointer p-4 gap-2 ">
           <div class=" border-round-3xl shadow-1 px-2 py-1 cursor-pointer hover:bg-gray-100 ">
           <svg xmlns="http://www.w3.org/2000/svg" class="text-purple-700" width="1.5em" height="1.5em" viewBox="0 0 24 24">
             <path fill="currentColor" d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2zm-2 0l-8 5l-8-5zm0 12H4V8l8 5l8-5z" />
@@ -328,7 +328,7 @@
           <p class="my-0 text-sm font-semibold " >Email</p>
           </div>
 
-        <div class="flex flex-column align-items-center p-4 gap-2 " >
+        <div class="flex flex-column align-items-center hover:bg-gray-100 cursor-pointer p-4 gap-2 " >
           <div  class=" border-round-3xl shadow-1 px-2 py-1  cursor-pointer hover:bg-gray-100 " >
           <svg xmlns="http://www.w3.org/2000/svg" class="text-blue-700" width="1.5em" height="1.5em" viewBox="0 0 24 24">
             <path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h9v-2H4V8l8 5l8-5v5h2V6c0-1.1-.9-2-2-2m-8 7L4 6h16zm7 4l4 4l-4 4v-3h-4v-2h4z" />
@@ -337,7 +337,7 @@
           <p class="my-0  text-sm font-semibold ">Follow-up</p>
           </div>
 
-        <div class="flex flex-column align-items-center p-4 gap-2 ">
+        <div class="flex flex-column align-items-center hover:bg-gray-100 cursor-pointer p-4 gap-2 ">
           <div  class=" border-round-3xl shadow-1 px-2 py-1  cursor-pointer hover:bg-gray-100 " >
           <svg xmlns="http://www.w3.org/2000/svg" class="text-blue-500" width="1.5em" height="1.5em" viewBox="0 0 32 32">
             <path fill="currentColor" d="M8.268 28H2.463V9.306h5.805zM5.362 6.756C3.506 6.756 2 5.218 2 3.362a3.362 3.362 0 0 1 6.724 0c0 1.856-1.506 3.394-3.362 3.394M29.994 28h-5.792v-9.1c0-2.169-.044-4.95-3.018-4.95c-3.018 0-3.481 2.356-3.481 4.794V28h-5.799V9.306h5.567v2.55h.081c.775-1.469 2.668-3.019 5.492-3.019c5.875 0 6.955 3.869 6.955 8.894V28z" />
@@ -346,7 +346,7 @@
           <p class="my-0  text-sm font-semibold " >Linkedin</p>
         </div>
 
-        <div  class="flex flex-column align-items-center p-4 gap-2 ">
+        <div  class="flex flex-column align-items-center hover:bg-gray-100 cursor-pointer p-4 gap-2 ">
           <div  class=" border-round-3xl shadow-1 px-2 py-1  cursor-pointer hover:bg-gray-100  ">
           <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-500" width="1.5em" height="1.5em" viewBox="0 0 512 512">
             <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" d="M451 374c-15.88-16-54.34-39.35-73-48.76c-24.3-12.24-26.3-13.24-45.4.95c-12.74 9.47-21.21 17.93-36.12 14.75s-47.31-21.11-75.68-49.39s-47.34-61.62-50.53-76.48s5.41-23.23 14.79-36c13.22-18 12.22-21 .92-45.3c-8.81-18.9-32.84-57-48.9-72.8C119.9 44 119.9 47 108.83 51.6A160 160 0 0 0 83 65.37C67 76 58.12 84.83 51.91 98.1s-9 44.38 23.07 102.64s54.57 88.05 101.14 134.49S258.5 406.64 310.85 436c64.76 36.27 89.6 29.2 102.91 23s22.18-15 32.83-31a159 159 0 0 0 13.8-25.8C465 391.17 468 391.17 451 374Z" />
@@ -355,7 +355,7 @@
           <p class="my-0  text-sm font-semibold " >Call</p>
         </div>
 
-        <div  class="flex flex-column align-items-center p-4 gap-2 ">
+        <div  class="flex flex-column align-items-center hover:bg-gray-100 cursor-pointer p-4 gap-2 ">
           <div  class=" border-round-3xl shadow-1 px-2 py-1  cursor-pointer hover:bg-gray-100 ">
           <svg xmlns="http://www.w3.org/2000/svg" class="text-green-600" width="1.5em" height="1.5em" viewBox="0 0 24 24">
           <path fill="currentColor" d="M22 5.18L10.59 16.6l-4.24-4.24l1.41-1.41l2.83 2.83l10-10zm-2.21 5.04c.13.57.21 1.17.21 1.78c0 4.42-3.58 8-8 8s-8-3.58-8-8s3.58-8 8-8c1.58 0 3.04.46 4.28 1.25l1.44-1.44A9.9 9.9 0 0 0 12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10c0-1.19-.22-2.33-.6-3.39z" />
@@ -365,6 +365,79 @@
           </div>
 
       </div>
+
+<!--            card2-->
+       <div class="mb-8 flex flex-column  shadow-1 border-round-xl bg-white  w-full ">
+<!--        envalop-->
+         <div class="flex flex-row justify-content-between w-full px-3 ">
+           <div class="flex align-items-center gap-2">
+             <div class="flex  p-1 border-round-3xl shadow-1 " >
+               <svg xmlns="http://www.w3.org/2000/svg" class="text-purple-600" width="1em" height="1em" viewBox="0 0 20 20">
+                 <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
+                   <path d="M17 4H3a.5.5 0 0 0-.5.5v11a.5.5 0 0 0 .5.5h14a.5.5 0 0 0 .5-.5v-11A.5.5 0 0 0 17 4M3.5 15V5h13v10z" />
+                   <path d="m17.324 4.88l-7.045 6a.5.5 0 0 1-.65-.001l-6.956-6A.5.5 0 0 1 3 4h14a.5.5 0 0 1 .324.88M15.642 5H4.345l5.612 4.841z" />
+                 </g>
+               </svg>
+             </div>
+             <p class="font-bold">Send Automatic Email</p>
+           </div>
+           <p class="text-gray-600">x</p>
+         </div>
+<!--          subject-->
+         <div class="flex justify-content-between shadow-1 px-3 text-xs">
+         <div>
+           <p class="text-gray-500 font-semibold" >
+           Subject: <span class="font-bold text-gray-900">Reaching out</span>
+           </p>
+         </div>
+
+         <div class="flex font-bold gap-1 text-xs text-gray-900" >
+           <p>{ }</p>
+           <p>CC</p>
+           <p>BCC</p>
+         </div>
+
+         </div>
+<!--buttons-->
+         <div class="flex gap-2 shadow-1 px-3">
+           <div class="flex my-2 p-2 align-items-center gap-1 shadow-1 border-round-md text-xs font-bold ">
+             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+               <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 20c-3.2 0-4-2.667-4-4H3v2a2 2 0 0 0 2 2zm0 0a3 3 0 0 0 3-3v-7m0-6H7a2 2 0 0 0-2 2v10M18 4h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1m0-6v6" />
+             </svg>
+             <p class="my-0 text-gray-900">Templates</p>
+             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+               <g fill="none" fill-rule="evenodd">
+                 <path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                 <path fill="currentColor" d="M12.707 15.707a1 1 0 0 1-1.414 0L5.636 10.05A1 1 0 1 1 7.05 8.636l4.95 4.95l4.95-4.95a1 1 0 0 1 1.414 1.414z" />
+               </g>
+             </svg>
+           </div>
+           <div class="flex my-2 p-2 align-items-center gap-1 shadow-1 border-round-md  text-xs font-bold ">
+              <p class="my-0">{ }</p>
+             <p class="my-0 text-gray-900">Templates</p>
+             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+               <g fill="none" fill-rule="evenodd">
+                 <path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                 <path fill="currentColor" d="M12.707 15.707a1 1 0 0 1-1.414 0L5.636 10.05A1 1 0 1 1 7.05 8.636l4.95 4.95l4.95-4.95a1 1 0 0 1 1.414 1.414z" />
+               </g>
+             </svg>
+           </div>
+         </div>
+<!--         mail-->
+        <div class="flex flex-column  text-xs font-semibold px-3">
+  <p>Hay <span class="bg-purple-100">{first_name}</span></p>
+  <p class="w-8">I noticed <span class="bg-purple-100">{company}</span>  is growing really fast in the <span class="bg-purple-100">{industry}</span>  space, and so i wanted to reach out</p>
+  <p class="w-9">Our tools helps you grow faster by letting you export leads from Linkedin and reach out automatically.</p>
+  <p>Intrested?</p>
+</div>
+<!--         text editor-->
+ <div>
+   
+
+ </div>
+
+
+       </div>
 
           </div>
 
