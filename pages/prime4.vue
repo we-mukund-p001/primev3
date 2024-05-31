@@ -318,63 +318,64 @@
          </svg>
        </div>
 
-      <div v-if="menu" class=" mb-8 flex gap-2 shadow-1 border-round-xl bg-white  w-full justify-content-around py-2 align-items-center ">
-        <div  @click="visible = true" class="flex flex-column align-items-center hover:bg-gray-100 cursor-pointer p-3 gap-2 ">
+      <div v-if="menu" class="  mx-2 md:mx-0 mb-8 flex shadow-1 border-round-xl bg-white  md:w-full justify-content-around md:px-4 py-2 align-items-center ">
+
+        <div  @click="visible = true" class="flex flex-column align-items-center hover:bg-gray-100 cursor-pointer p-2 md:p-3 gap-2 ">
           <div class=" border-round-3xl shadow-1 px-2 py-1 cursor-pointer hover:bg-gray-100 ">
           <svg xmlns="http://www.w3.org/2000/svg" class="text-purple-700" width="1em" height="1em" viewBox="0 0 24 24">
             <path fill="currentColor" d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2zm-2 0l-8 5l-8-5zm0 12H4V8l8 5l8-5z" />
           </svg>
           </div>
-          <p class="my-0 text-sm font-semibold " >Email</p>
+          <p class="my-0 text-xs md:text-sm font-semibold " >Email</p>
           </div>
 
-        <div  @click="visible = true" class="flex flex-column align-items-center hover:bg-gray-100 cursor-pointer p-3 gap-2 " >
+        <div  @click="visible = true" class="flex flex-column align-items-center hover:bg-gray-100 cursor-pointer p-2 md:p-3 gap-2 " >
           <div  class=" border-round-3xl shadow-1 px-2 py-1  cursor-pointer hover:bg-gray-100 " >
           <svg xmlns="http://www.w3.org/2000/svg" class="text-blue-700" width="1em" height="1em" viewBox="0 0 24 24">
             <path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h9v-2H4V8l8 5l8-5v5h2V6c0-1.1-.9-2-2-2m-8 7L4 6h16zm7 4l4 4l-4 4v-3h-4v-2h4z" />
           </svg>
           </div>
-          <p class="my-0  text-sm font-semibold ">Follow-up</p>
+          <p class="my-0  text-xs md:text-sm font-semibold ">Follow-up</p>
           </div>
 
-        <div  @click="visible = true" class="flex flex-column align-items-center hover:bg-gray-100 cursor-pointer p-3 gap-2 ">
+        <div  @click="visible = true" class="flex flex-column align-items-center hover:bg-gray-100 cursor-pointer p-2 md:p-3 gap-2 ">
           <div  class=" border-round-3xl shadow-1 px-2 py-1  cursor-pointer hover:bg-gray-100 " >
           <svg xmlns="http://www.w3.org/2000/svg" class="text-blue-500" width="1em" height="1em" viewBox="0 0 32 32">
             <path fill="currentColor" d="M8.268 28H2.463V9.306h5.805zM5.362 6.756C3.506 6.756 2 5.218 2 3.362a3.362 3.362 0 0 1 6.724 0c0 1.856-1.506 3.394-3.362 3.394M29.994 28h-5.792v-9.1c0-2.169-.044-4.95-3.018-4.95c-3.018 0-3.481 2.356-3.481 4.794V28h-5.799V9.306h5.567v2.55h.081c.775-1.469 2.668-3.019 5.492-3.019c5.875 0 6.955 3.869 6.955 8.894V28z" />
           </svg>
           </div>
-          <p class="my-0  text-sm font-semibold " >Linkedin</p>
+          <p class="my-0  text-xs md:text-sm font-semibold " >Linkedin</p>
         </div>
 
-        <div   @click="visible = true" class="flex flex-column align-items-center hover:bg-gray-100 cursor-pointer p-3 gap-2 ">
+        <div   @click="visible = true" class="flex flex-column align-items-center hover:bg-gray-100 cursor-pointer p-2 md:p-3 gap-2 ">
           <div  class=" border-round-3xl shadow-1 px-2 py-1  cursor-pointer hover:bg-gray-100  ">
           <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-500" width="1em" height="1em" viewBox="0 0 512 512">
             <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" d="M451 374c-15.88-16-54.34-39.35-73-48.76c-24.3-12.24-26.3-13.24-45.4.95c-12.74 9.47-21.21 17.93-36.12 14.75s-47.31-21.11-75.68-49.39s-47.34-61.62-50.53-76.48s5.41-23.23 14.79-36c13.22-18 12.22-21 .92-45.3c-8.81-18.9-32.84-57-48.9-72.8C119.9 44 119.9 47 108.83 51.6A160 160 0 0 0 83 65.37C67 76 58.12 84.83 51.91 98.1s-9 44.38 23.07 102.64s54.57 88.05 101.14 134.49S258.5 406.64 310.85 436c64.76 36.27 89.6 29.2 102.91 23s22.18-15 32.83-31a159 159 0 0 0 13.8-25.8C465 391.17 468 391.17 451 374Z" />
           </svg>
           </div>
-          <p class="my-0  text-sm font-semibold " >Call</p>
+          <p class="my-0  text-xs md:text-sm font-semibold " >Call</p>
         </div>
 
-        <div  @click="visible = true"  class="flex flex-column align-items-center hover:bg-gray-100 cursor-pointer p-3 gap-2 ">
+        <div  @click="visible = true"  class="flex flex-column align-items-center hover:bg-gray-100 cursor-pointer p-2 md:p-3 gap-2 ">
           <div  class=" border-round-3xl shadow-1 px-2 py-1  cursor-pointer hover:bg-gray-100 ">
           <svg xmlns="http://www.w3.org/2000/svg" class="text-green-600" width="1em" height="1em" viewBox="0 0 24 24">
           <path fill="currentColor" d="M22 5.18L10.59 16.6l-4.24-4.24l1.41-1.41l2.83 2.83l10-10zm-2.21 5.04c.13.57.21 1.17.21 1.78c0 4.42-3.58 8-8 8s-8-3.58-8-8s3.58-8 8-8c1.58 0 3.04.46 4.28 1.25l1.44-1.44A9.9 9.9 0 0 0 12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10c0-1.19-.22-2.33-.6-3.39z" />
         </svg>
           </div>
-          <p class="my-0  text-sm font-semibold " >Task</p>
+          <p class="my-0  text-xs md:text-sm font-semibold " >Task</p>
           </div>
 
       </div>
 
 <!--            card2-->
-       <Dialog  v-model:visible="visible" modal class=" mb-8 flex flex-column  shadow-1 border-round-xl bg-white  w-5 " :pt="{
+       <Dialog  v-model:visible="visible" modal class=" mb-8 flex flex-column  shadow-1 border-round-xl bg-white  w-10 md:w-8 lg:w-5 " :pt="{
          header:{class:'hidden '},
          content:{class:'border-round-lg px-3 py-2 '},
 
        }">
 <!--        envalop-->
          <div class="flex flex-row align-items-center justify-content-between w-full mb-3 ">
-           <div class="flex align-items-center gap-3">
+           <div class="flex text-sm md:text-base align-items-center gap-3">
              <div class="flex  p-1 border-round-3xl shadow-1 " >
                <svg xmlns="http://www.w3.org/2000/svg" class="text-purple-600 text-lg " width="1em" height="1em" viewBox="0 0 20 20">
                  <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
@@ -430,7 +431,13 @@
              </svg>
            </div>
          </div>
-<!--         mail-->
+
+<!--         both-->
+         <Editor v-model="value" editorStyle="height: 320px" :pt="{
+      root:{class:' flex flex-column-reverse'},
+      header:{class:' text-red-500'}
+    }" />
+         <!--         mail-->
         <div class="flex flex-column  text-xs font-semibold ">
   <p>Hay <span class="bg-purple-100">{first_name}</span></p>
   <p class="w-8">I noticed <span class="bg-purple-100">{company}</span>  is growing really fast in the <span class="bg-purple-100">{industry}</span>  space, and so i wanted to reach out</p>
@@ -494,11 +501,11 @@
 
  </div>
 <!--         end buttons-->
-<div class="flex justify-content-between py-2 ">
-  <Button @click="visible = false" class="text-xs font-semibold hover:bg-gray-100 bg-white text-gray-800 border-none shadow-1  " label="Save as template" >Save as template</Button>
-  <div class="flex gap-2">
-    <Button @click="visible = false" class="text-xs font-semibold hover:bg-gray-100 bg-white text-gray-800 border-none shadow-1  " label="Send test email" >Send test email</Button>
-    <Button @click="visible = false" class="text-xs font-semibold  px-6 bg-purple-600 hover:bg-purple-700 border-purple-700 text-purple-100  " label="Save" >Save</Button>
+<div class="flex justify-content-between py-2 gap-1 md:gap-0 ">
+  <Button @click="visible = false" class="text-xs font-semibold hover:bg-gray-100 bg-white text-gray-800 border-none shadow-1 p-1 md:p-2 " label="Save as template" >Save as template</Button>
+  <div class="flex gap-1 md:gap-2">
+    <Button @click="visible = false" class="text-xs font-semibold hover:bg-gray-100 bg-white text-gray-800 border-none shadow-1 p-1 md:p-2 " label="Send test email" >Send test email</Button>
+    <Button @click="visible = false" class="text-xs font-semibold  md:px-6 bg-purple-600 hover:bg-purple-700 border-purple-700 text-purple-100  " label="Save" >Save</Button>
   </div>
 </div>
 
@@ -611,6 +618,10 @@
 </template>
 
 <script setup>
+import Editor from 'primevue/editor';
+
+const value = ref('');
+
 const glowBtn = reactive ({
   one:false,
   two:true,

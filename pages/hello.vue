@@ -1,14 +1,15 @@
 
+<template>
 
-  <template>
-    <div class="card">
-      <DataTable :value="products" tableStyle="min-width: 50rem">
-        <Column field="code" header="Code"></Column>
-        <Column field="name" header="Name"></Column>
-        <Column field="category" header="Category"></Column>
-        <Column field="quantity" header="Quantity"></Column>
-      </DataTable>
-    </div>
-  </template>
+    <Editor v-model="value" editorStyle="height: 320px" :pt="{
+      root:{class:' flex flex-column-reverse'},
+      header:{class:' text-red-500'}
+    }" />
 
+</template>
 
+<script setup>
+import Editor from 'primevue/editor';
+
+const value = ref('');
+</script>
