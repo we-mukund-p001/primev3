@@ -53,23 +53,30 @@
         </div>
       </template>
       <template #content="{ nextCallback }">
-        <div class="flex flex-column h-12rem">
-          <Card>
+        <div class="flex flex-column">
+          <div class="w-full flex flex-column align-items-center relative h-screen	 gap-3">
+            <div class="flex flex-column align-items-start w-6 gap-1">
+              <p class="my-0 text-xl font-semibold">Select contacts</p>
+            <p class="my-0 text-sm text-gray-400 ">Preview a list of contacts that will be in your campaign</p>
+            </div>
+          <Card class="w-6 " :pt="{
+                  body:{class:'px-3 pb-3 pt-1'}
+                }">
             <template #title>
-              <div class="flex flex-row text-base align-items-center gap-3">
-                <Checkbox v-model="checked" :binary="true" />
+              <div class="flex flex-row text-sm align-items-center border-bottom-1 gap-3 border-gray-200">
+                <TriStateCheckbox v-model="checkBox.six" />
                 <p>Select 4 contacts</p>
               </div>
             </template>
             <template #content>
-              <div class="flex flex-row justify-content-between ">
-                <div class="flex flex-column justify-content-between gap-4  ">
+              <div class="flex flex-row justify-content-between  ">
+                <div class="flex flex-column justify-content-between gap-3  ">
                   <!--       1-->
-                  <div  class="flex flex-row align-items-center gap-3">
-                    <Checkbox v-model="checked" :binary="true" />
-                    <div class="flex   flex-wrap  lg:flex-row flex-column justify-content-center align-items-center gap-2">
+                  <div  class="flex flex-row align-items-center text-xs md:text-sm gap-3">
+                    <Checkbox v-model="checkBox.one" :binary="true" />
+                    <div class="flex   flex-wrap  lg:flex-row flex-column justify-content-center align-items-center   gap-2">
 
-                      <Avatar image="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" class="w-3rem h-3rem mr-1 cursor-pointer" size="" shape="circle"/>
+                      <Avatar image="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" class=" mr-1 cursor-pointer" size="large" shape="circle"/>
 
                       <div class=" lg:flex hidden flex-column gap-1">
                         <p class="font-semibold my-0">Leslie Alexander</p>
@@ -79,8 +86,8 @@
 
                     </div>
                   </div>
-                  <div  class="flex flex-row align-items-center gap-3">
-                    <Checkbox v-model="checked" :binary="true" />
+                  <div  class="flex flex-row align-items-center text-xs md:text-sm  gap-3">
+                    <Checkbox v-model="checkBox.two" :binary="true" />
                     <div class="flex   flex-wrap  lg:flex-row flex-column justify-content-center align-items-center gap-2">
 
                       <Avatar image="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png" class="w-3rem h-3rem mr-1 cursor-pointer" size="" shape="circle"/>
@@ -92,8 +99,8 @@
 
 
                     </div>       </div>
-                  <div  class="flex flex-row align-items-center gap-3">
-                    <Checkbox v-model="checked" :binary="true" />
+                  <div  class="flex flex-row align-items-center text-xs md:text-sm  gap-3">
+                    <Checkbox v-model="checkBox.three" :binary="true" />
                     <div class="flex   flex-wrap  lg:flex-row flex-column justify-content-center align-items-center gap-2">
 
                       <Avatar image="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" class="w-3rem h-3rem mr-1 cursor-pointer" size="" shape="circle"/>
@@ -105,8 +112,8 @@
 
 
                     </div>       </div>
-                  <div  class="flex flex-row align-items-center gap-3">
-                    <Checkbox v-model="checked" :binary="true" />
+                  <div  class="flex flex-row align-items-center text-xs md:text-sm  gap-3">
+                    <Checkbox v-model="checkBox.four" :binary="true" />
                     <div class="flex   flex-wrap  lg:flex-row flex-column justify-content-center align-items-center gap-2">
 
                       <Avatar image="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/neil-sims.png" class="w-3rem h-3rem mr-1 cursor-pointer" size="" shape="circle"/>
@@ -118,8 +125,8 @@
 
 
                     </div>       </div>
-                  <div  class="flex flex-row align-items-center gap-3">
-                    <Checkbox v-model="checked" :binary="true" />
+                  <div  class="flex flex-row align-items-center text-xs md:text-sm  gap-3">
+                    <Checkbox v-model="checkBox.five" :binary="true" />
                     <div class="flex   flex-wrap  lg:flex-row flex-column justify-content-center align-items-center gap-2">
 
                       <Avatar image="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/robert-brown.png" class="w-3rem h-3rem mr-1 cursor-pointer" size="" shape="circle"/>
@@ -134,13 +141,13 @@
 
 
                 </div>
-                <div class="flex flex-column justify-content-between gap-4  ">
+                <div class="flex flex-column justify-content-between gap-3  ">
                   <!--       2-->
-                  <div  class="flex flex-row">
+                  <div  class="flex flex-row text-xs md:text-sm ">
 
                     <div class="flex   flex-wrap  lg:flex-row flex-column justify-content-center align-items-center gap-2">
 
-                      <Avatar class="w-3rem h-3rem mr-1 text-gray-900 bg-white shadow-1 cursor-pointer overflow-hidden" >
+                      <Avatar class="w-3rem h-3rem mr-1 text-gray-900 bg-white shadow-1 cursor-pointer overflow-hidden" size="large" >
                         <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 16 16">
                           <defs>
                             <path id="biApple0" d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516s1.52.087 2.475-1.258s.762-2.391.728-2.43m3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422s1.675-2.789 1.698-2.854s-.597-.79-1.254-1.157a3.7 3.7 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116c-.508.139-1.653.589-1.968.607c-.316.018-1.256-.522-2.267-.665c-.647-.125-1.333.131-1.824.328c-.49.196-1.422.754-2.074 2.237c-.652 1.482-.311 3.83-.067 4.56s.625 1.924 1.273 2.796c.576.984 1.34 1.667 1.659 1.899s1.219.386 1.843.067c.502-.308 1.408-.485 1.766-.472c.357.013 1.061.154 1.782.539c.571.197 1.111.115 1.652-.105c.541-.221 1.324-1.059 2.238-2.758q.52-1.185.473-1.282" />
@@ -159,7 +166,7 @@
 
                     </div>
                   </div>
-                  <div  class="flex flex-row">
+                  <div  class="flex flex-row text-xs md:text-sm ">
 
                     <div class="flex   flex-wrap  lg:flex-row flex-column justify-content-center align-items-center gap-2">
 
@@ -170,13 +177,13 @@
                       </Avatar>
                       <div class=" lg:flex hidden flex-column gap-1">
                         <p class="font-semibold my-0">Nothat</p>
-                        <p class="my-0 font-normal  hover:underline cursor-pointer text-purple-700">nothat.com</p>
+                        <p class="my-0 font-normal  hover:underline cursor-pointer text-purple-700">Nothat.com</p>
                       </div>
 
 
                     </div>
                   </div>
-                  <div  class="flex flex-row">
+                  <div  class="flex flex-row text-xs md:text-sm ">
 
                     <div class="flex   flex-wrap  lg:flex-row flex-column justify-content-center align-items-center gap-2">
 
@@ -193,7 +200,7 @@
 
                     </div>
                   </div>
-                  <div  class="flex flex-row">
+                  <div  class="flex flex-row text-xs md:text-sm ">
 
                     <div class="flex   flex-wrap  lg:flex-row flex-column justify-content-center align-items-center gap-2">
 
@@ -210,7 +217,7 @@
 
                     </div>
                   </div>
-                  <div  class="flex flex-row">
+                  <div  class="flex flex-row text-xs md:text-sm ">
 
                     <div class="flex   flex-wrap  lg:flex-row flex-column justify-content-center align-items-center gap-2">
 
@@ -229,15 +236,15 @@
                   </div>
 
                 </div>
-                <div class="flex flex-column justify-content-between gap-4  ">
+                <div class="flex flex-column justify-content-between gap-3  ">
                   <!--       3-->
-                  <div  class="flex flex-row align-items-center justify-content-end gap-2 ">
-                    <div  class="flex  p-2 border-round-3xl shadow-1 cursor-pointer hover:bg-gray-100 "  >
+                  <div  class="flex flex-row align-items-center text-gray-400 justify-content-end gap-2 ">
+                    <div   class="flex  p-1 border-round-3xl shadow-1 cursor-pointer hover:bg-gray-100  "  >
                       <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
                         <path fill="currentColor" fill-rule="evenodd" d="M5.733 2.043c1.217-1.21 3.221-.995 4.24.367l1.262 1.684c.83 1.108.756 2.656-.229 3.635l-.238.238a.653.653 0 0 0-.008.306c.063.408.404 1.272 1.832 2.692c1.428 1.42 2.298 1.76 2.712 1.824a.668.668 0 0 0 .315-.009l.408-.406c.876-.87 2.22-1.033 3.304-.444l1.91 1.04c1.637.888 2.05 3.112.71 4.445l-1.421 1.412c-.448.445-1.05.816-1.784.885c-1.81.169-6.027-.047-10.46-4.454c-4.137-4.114-4.931-7.702-5.032-9.47l.749-.042l-.749.042c-.05-.894.372-1.65.91-2.184zm3.04 1.266c-.507-.677-1.451-.731-1.983-.202l-1.57 1.56c-.33.328-.488.69-.468 1.036c.08 1.405.72 4.642 4.592 8.492c4.062 4.038 7.813 4.159 9.263 4.023c.296-.027.59-.181.865-.454l1.42-1.413c.578-.574.451-1.62-.367-2.064l-1.91-1.039c-.528-.286-1.146-.192-1.53.19l-.455.453l-.53-.532c.53.532.529.533.528.533l-.001.002l-.003.003l-.007.006l-.015.014a1.11 1.11 0 0 1-.136.106c-.08.053-.186.112-.319.161c-.27.101-.628.155-1.07.087c-.867-.133-2.016-.724-3.543-2.242c-1.526-1.518-2.122-2.66-2.256-3.526c-.069-.442-.014-.8.088-1.07a1.527 1.527 0 0 1 .238-.42l.032-.035l.014-.015l.006-.006l.003-.003l.002-.002l.53.53l-.53-.531l.288-.285c.428-.427.488-1.134.085-1.673z" clip-rule="evenodd" />
                       </svg>
                     </div>
-                    <div  class="flex  p-2 border-round-3xl shadow-1 cursor-pointer hover:bg-gray-100 "  >
+                    <div   class="flex  p-1 border-round-3xl shadow-1 cursor-pointer hover:bg-gray-100 "  >
                       <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
                         <g fill="currentColor">
                           <path d="M6 5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zm10 0H8v14h8z" />
@@ -245,7 +252,7 @@
                         </g>
                       </svg>
                     </div>
-                    <div  class="flex  p-2 border-round-3xl shadow-1 cursor-pointer hover:bg-gray-100 "  >
+                    <div   class="flex  p-1 border-round-3xl shadow-1 cursor-pointer hover:bg-gray-100 "  >
                       <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 20 20">
                         <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
                           <path d="M17 4H3a.5.5 0 0 0-.5.5v11a.5.5 0 0 0 .5.5h14a.5.5 0 0 0 .5-.5v-11A.5.5 0 0 0 17 4M3.5 15V5h13v10z" />
@@ -254,8 +261,8 @@
                       </svg>
                     </div>
                   </div>
-                  <div  class="flex flex-row align-items-center justify-content-end gap-2 ">
-                    <div  class="flex  p-2 border-round-3xl shadow-1 cursor-pointer hover:bg-gray-100 "  >
+                  <div  class="flex flex-row align-items-center text-gray-400 justify-content-end gap-2 ">
+                    <div  class="flex  p-1 border-round-3xl shadow-1 cursor-pointer hover:bg-gray-100 "  >
                       <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 20 20">
                         <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
                           <path d="M17 4H3a.5.5 0 0 0-.5.5v11a.5.5 0 0 0 .5.5h14a.5.5 0 0 0 .5-.5v-11A.5.5 0 0 0 17 4M3.5 15V5h13v10z" />
@@ -264,8 +271,8 @@
                       </svg>
                     </div>
                   </div>
-                  <div  class="flex flex-row align-items-center justify-content-end gap-2 ">
-                    <div  class="flex  p-2 border-round-3xl shadow-1 cursor-pointer hover:bg-gray-100 "  >
+                  <div  class="flex flex-row align-items-center text-gray-400 justify-content-end gap-2 ">
+                    <div  class="flex  p-1 border-round-3xl shadow-1 cursor-pointer hover:bg-gray-100 "  >
                       <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
                         <g fill="currentColor">
                           <path d="M6 5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zm10 0H8v14h8z" />
@@ -273,7 +280,7 @@
                         </g>
                       </svg>
                     </div>
-                    <div  class="flex  p-2 border-round-3xl shadow-1 cursor-pointer hover:bg-gray-100 "  >
+                    <div  class="flex  p-1 border-round-3xl shadow-1 cursor-pointer hover:bg-gray-100 "  >
                       <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 20 20">
                         <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
                           <path d="M17 4H3a.5.5 0 0 0-.5.5v11a.5.5 0 0 0 .5.5h14a.5.5 0 0 0 .5-.5v-11A.5.5 0 0 0 17 4M3.5 15V5h13v10z" />
@@ -282,8 +289,8 @@
                       </svg>
                     </div>
                   </div>
-                  <div  class="flex flex-row align-items-center justify-content-end gap-2 ">
-                    <div  class="flex  p-2 border-round-3xl shadow-1 cursor-pointer hover:bg-gray-100 "  >
+                  <div  class="flex flex-row align-items-center text-gray-400 justify-content-end gap-2 ">
+                    <div  class="flex  p-1 border-round-3xl shadow-1 cursor-pointer hover:bg-gray-100 "  >
                       <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
                         <g fill="currentColor">
                           <path d="M6 5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zm10 0H8v14h8z" />
@@ -291,7 +298,7 @@
                         </g>
                       </svg>
                     </div>
-                    <div  class="flex  p-2 border-round-3xl shadow-1 cursor-pointer hover:bg-gray-100 "  >
+                    <div  class="flex  p-1 border-round-3xl shadow-1 cursor-pointer hover:bg-gray-100 "  >
                       <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 20 20">
                         <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
                           <path d="M17 4H3a.5.5 0 0 0-.5.5v11a.5.5 0 0 0 .5.5h14a.5.5 0 0 0 .5-.5v-11A.5.5 0 0 0 17 4M3.5 15V5h13v10z" />
@@ -300,12 +307,12 @@
                       </svg>
                     </div>
                   </div>
-                  <div  class="flex flex-row align-items-center justify-content-end gap-2 ">
-                    <div  class="flex  p-2 border-round-3xl shadow-1 cursor-pointer hover:bg-gray-100 "  >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 20 20">
-                        <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
-                          <path d="M17 4H3a.5.5 0 0 0-.5.5v11a.5.5 0 0 0 .5.5h14a.5.5 0 0 0 .5-.5v-11A.5.5 0 0 0 17 4M3.5 15V5h13v10z" />
-                          <path d="m17.324 4.88l-7.045 6a.5.5 0 0 1-.65-.001l-6.956-6A.5.5 0 0 1 3 4h14a.5.5 0 0 1 .324.88M15.642 5H4.345l5.612 4.841z" />
+                  <div  class="flex flex-row align-items-center text-gray-400 justify-content-end gap-2 ">
+                    <div  class="flex  p-1 border-round-3xl shadow-1 cursor-pointer hover:bg-gray-100 "  >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
+                        <g fill="currentColor">
+                          <path d="M6 5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zm10 0H8v14h8z" />
+                          <path d="M13 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0" />
                         </g>
                       </svg>
                     </div>
@@ -313,12 +320,57 @@
 
                 </div>
 
+                <Card class=" absolute" v-show="toast" style="bottom:29%; left:65% " :pt="{
+                  body:{class:'p-3'}
+                }">
+                   <template #content >
+                     <div class="flex flex-row align-items-center gap-8 ">
+                     <div class="text-xs">
+                    <p class="m-0 font-bold"> CSV added to contact</p>
+                    <p class="m-0 text-gray-400 ">
+                      your contacts in CSV have been added
+                    </p>
+                     </div>
+                     <p @click="toggelToast" class="text-purple-600 m-0 text-sm cursor-pointer">okey</p>
+                     </div>
+
+                   </template>
+                </Card>
+
+
               </div>
             </template>
           </Card>
-        </div>
-        <div class="flex pt-4 justify-content-end">
-          <Button label="Next" icon="pi pi-arrow-right" iconPos="right" @click="nextCallback(); fObj.btn2()" />
+          </div>
+          </div>
+
+
+
+
+<!--        nextBtn-->
+        <div class="flex py-3   bg-white fixed px-3 " style="bottom:0%; right:0%; left:0% ">
+
+          <div class="flex align-items-center w-7 justify-content-end gap-2">
+            <p class=" md:flex hidden  text-xs  font-semibold my-0">Your Campaign will be sent to</p>
+            <div @click="toggelToast" class=" flex align-items-center gap-2 text-xs border-1 py-1 px-2 border-round-3xl border-purple-600 hover:bg-purple-200 bg-purple-100 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 20 20">
+                <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
+                  <path d="M5 9a2 2 0 1 0 0-4a2 2 0 0 0 0 4m0 1a3 3 0 1 0 0-6a3 3 0 0 0 0 6" />
+                  <path d="M3.854 8.896a.5.5 0 0 1 0 .708l-.338.337A3.47 3.47 0 0 0 2.5 12.394v1.856a.5.5 0 1 1-1 0v-1.856a4.47 4.47 0 0 1 1.309-3.16l.337-.338a.5.5 0 0 1 .708 0m11.792-.3a.5.5 0 0 0 0 .708l.338.337A3.469 3.469 0 0 1 17 12.094v2.156a.5.5 0 0 0 1 0v-2.156a4.47 4.47 0 0 0-1.309-3.16l-.337-.338a.5.5 0 0 0-.708 0" />
+                  <path d="M14 9a2 2 0 1 1 0-4a2 2 0 0 1 0 4m0 1a3 3 0 1 1 0-6a3 3 0 0 1 0 6m-4.5 3.25a2.5 2.5 0 0 0-2.5 2.5v1.3a.5.5 0 0 1-1 0v-1.3a3.5 3.5 0 0 1 7 0v1.3a.5.5 0 1 1-1 0v-1.3a2.5 2.5 0 0 0-2.5-2.5" />
+                  <path d="M9.5 11.75a2 2 0 1 0 0-4a2 2 0 0 0 0 4m0 1a3 3 0 1 0 0-6a3 3 0 0 0 0 6" />
+                </g>
+              </svg>
+              <p class="my-0 font-semibold">24 Contacts</p></div>
+
+          </div>
+          <div class=" w-5 flex  justify-content-end">
+          <Button label="Next"  icon="pi pi-angle-right" iconPos="right" class="bg-purple-600 border-none hover:bg-purple-700" @click="nextCallback(); fObj.btn2()" >
+
+            <p class="my-0  md:mx-5 text-xs md:text-base">Next</p>
+            <i class="pi pi-angle-right" ></i>
+          </Button>
+          </div>
         </div>
       </template>
     </StepperPanel>
@@ -700,7 +752,7 @@
           </div>
 
         </div>
-
+<!--     endButtons-->
         <div class="flex py-3 justify-content-between bg-white fixed px-3 " style="bottom:0%; right:0%; left:0% ">
           <Button label="Back" severity="secondary" class=" bg-white shadow-1 hover:bg-gray-100 "   icon="pi pi-arrow-left" @click="prevCallback(); fObj.btn1()" >
             <i class="pi pi-angle-left" ></i>
@@ -839,6 +891,27 @@ function openMenu(){
 import { ref } from "vue";
 
 const visible = ref(false);
+
+
+const checkBox = reactive({
+  one:null,
+  two:null,
+  three:null,
+  four:null,
+  five:null,
+  six:null
+
+})
+
+const toast = ref(true)
+function toggelToast () {
+  toast.value = !toast.value
+}
+
+
+
+
+
 </script>
 
 <style scoped>
