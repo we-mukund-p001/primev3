@@ -798,12 +798,12 @@
 
           <div class="flex flex-column gap-1 pb-4 border-bottom-1 border-gray-300">
             <p class="text-2xl font-bold my-0">Settings</p>
-            <p class="text-gray-400 my-0">Tweak these settings to fit your campaign and audience</p>
+            <p class="text-gray-400 text-sm my-0">Tweak these settings to fit your campaign and audience</p>
           </div>
 
           <div class="flex flex-column gap-1 mt-5 mb-4">
             <p class="my-0 font-bold ">Master Switch</p>
-            <p class="my-0 text-gray-400 ">Turn on or off your campaign</p>
+            <p class="my-0 text-gray-400 text-sm ">Turn on or off your campaign</p>
           </div>
 
           <Card class="mb-7" :pt="{
@@ -825,27 +825,57 @@
             </template>
           </Card>
 
-          <div>
+          <div class="flex flex-column gap-3">
             <div class="flex flex-column gap-1">
               <p class="my-0 text-base font-bold ">Task Strtigy</p>
-              <p class="my-0 text-gray-400 text-xs">Choose to automate or manually approve tasks</p>
+              <p class="my-0 text-gray-400 text-sm">Choose to automate or manually approve tasks</p>
             </div>
-            <div class="flex align-items-center">
-              <label for="ingredient1" class="border-1">
-                <div>
-                  
+            <div class="flex w-full gap-3">
+            <div class="flex align-items-center w-6 ">
+              <label for="ingredient1" class=" p-2 shadow-1 border-round-xl flex flex-column w-full gap-3" :class="ingredient == 'Cheese'?'border-1  border-purple-500': '' "  >
+                <div class="flex justify-content-between">
+                  <svg xmlns="http://www.w3.org/2000/svg"  class="text-purple-600" width="1em" height="1em" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="m9 4l2.5 5.5L17 12l-5.5 2.5L9 20l-2.5-5.5L1 12l5.5-2.5zm0 4.83L8 11l-2.17 1L8 13l1 2.17L10 13l2.17-1L10 11zM19 9l-1.26-2.74L15 5l2.74-1.25L19 1l1.25 2.75L23 5l-2.75 1.26zm0 14l-1.26-2.74L15 19l2.74-1.25L19 15l1.25 2.75L23 19l-2.75 1.26z" />
+                  </svg>
               <RadioButton v-model="ingredient" inputId="ingredient1" name="pizza" value="Cheese" />
 
                 </div>
+                <div class="flex flex-column gap-1">
+                  <p class="font-semibold text-sm my-0"> Automatic </p>
+                  <p class="text-gray-400 text-xs my-0">Emails are made automatically</p>
+                </div>
+
              </label>
             </div>
-            <div class="flex align-items-center">
-              <RadioButton v-model="ingredient" inputId="ingredient2" name="pizza" value="Mushroom" />
-              <label for="ingredient2" class="ml-2">Mushroom</label>
-            </div>
+            <div class="flex align-items-center w-6 ">
+              <label for="ingredient2" class=" p-2  flex flex-column shadow-1 border-round-xl w-full gap-3" :class="ingredient == 'Mushroom'?'border-1  border-purple-500': '' " >
+                <div class="flex justify-content-between">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="text-purple-600" width="1em" height="1em" viewBox="0 0 256 256">
+                    <path fill="currentColor" d="M58 76a58 58 0 0 1 116 0a6 6 0 0 1-12 0a46 46 0 0 0-92 0a6 6 0 0 1-12 0m138 46a25.87 25.87 0 0 0-14.59 4.49A26 26 0 0 0 142 110.1V76a26 26 0 0 0-52 0v87l-7.53-12.1a26 26 0 0 0-45 26.13l29.32 50A6 6 0 0 0 77.16 221l-29.29-50a14 14 0 0 1 24.25-14a1 1 0 0 0 .1.17l18.68 30A6 6 0 0 0 102 184V76a14 14 0 0 1 28 0v68a6 6 0 0 0 12 0v-12a14 14 0 0 1 28 0v20a6 6 0 0 0 12 0v-4a14 14 0 0 1 28 0v36c0 22.13-7.3 37.18-7.37 37.32a6 6 0 0 0 2.69 8a5.8 5.8 0 0 0 2.68.68a6 6 0 0 0 5.38-3.32c.35-.7 8.63-17.55 8.63-42.68v-36A26 26 0 0 0 196 122" />
+                  </svg>
+                  <RadioButton v-model="ingredient" inputId="ingredient2" name="pizza" value="Mushroom" />
 
+                </div>
+                <div class="flex flex-column gap-1">
+                  <p class="font-semibold text-sm my-0"> Automatic </p>
+                  <p class="text-gray-400 text-xs my-0">Emails are made automatically</p>
+                </div>
+
+             </label>
+            </div>
+</div>
+      </div>
+
+<!--          email-->
+          <div class="border-1 mb-8">
+          <div class="flex flex-column gap-1 mt-6 mb-4">
+            <p class="my-0 font-bold ">Email</p>
+            <p class="my-0 text-gray-400 text-sm ">Outbond email settings</p>
           </div>
 
+            <label for="name" class="text-xs font-semibold"> Senders Email Account</label>
+          <Dropdown v-model="selectedCity" :options="cities" optionLabel="name" placeholder="Select a City" class="w-full " />
+            </div>
 
 
 
@@ -992,7 +1022,14 @@ function toggelToast () {
 
 const ingredient = ref('');
 
-
+const selectedCity = ref();
+const cities = ref([
+  { name: 'New York', code: 'NY' },
+  { name: 'Rome', code: 'RM' },
+  { name: 'London', code: 'LDN' },
+  { name: 'Istanbul', code: 'IST' },
+  { name: 'Paris', code: 'PRS' }
+]);
 </script>
 
 <style scoped>
