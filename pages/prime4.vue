@@ -792,13 +792,95 @@
         </div>
       </template>
       <template #content="{ prevCallback, nextCallback }">
-        <div class="flex flex-column h-12rem">
-          <div class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">Content II</div>
+        <div class="flex justify-content-center ">
+        <div class="flex flex-column w-5">
+
+
+          <div class="flex flex-column gap-1 pb-4 border-bottom-1 border-gray-300">
+            <p class="text-2xl font-bold my-0">Settings</p>
+            <p class="text-gray-400 my-0">Tweak these settings to fit your campaign and audience</p>
+          </div>
+
+          <div class="flex flex-column gap-1 mt-5 mb-4">
+            <p class="my-0 font-bold ">Master Switch</p>
+            <p class="my-0 text-gray-400 ">Turn on or off your campaign</p>
+          </div>
+
+          <Card class="mb-7" :pt="{
+            body:{class:'py-2 px-3'}
+          }">
+            <template #content>
+              <div class="flex justify-content-between">
+
+                <div>
+                  <p class="my-0 text-base font-semibold text-purple-400">Active</p>
+                  <p class="my-0 text-sm text-gray-400">Campaign ready to send</p>
+                </div>
+
+                <InputSwitch v-model="checked" />
+
+
+
+              </div>
+            </template>
+          </Card>
+
+          <div>
+            <div class="flex flex-column gap-1">
+              <p class="my-0 text-base font-bold ">Task Strtigy</p>
+              <p class="my-0 text-gray-400 text-xs">Choose to automate or manually approve tasks</p>
+            </div>
+            <div class="flex align-items-center">
+              <label for="ingredient1" class="border-1">
+                <div>
+                  
+              <RadioButton v-model="ingredient" inputId="ingredient1" name="pizza" value="Cheese" />
+
+                </div>
+             </label>
+            </div>
+            <div class="flex align-items-center">
+              <RadioButton v-model="ingredient" inputId="ingredient2" name="pizza" value="Mushroom" />
+              <label for="ingredient2" class="ml-2">Mushroom</label>
+            </div>
+
+          </div>
+
+
+
+
+
+
+
+</div>
+</div>
+        <!--     endButtons-->
+        <div class="flex py-3 justify-content-between bg-white fixed px-3 " style="bottom:0%; right:0%; left:0% ">
+          <Button label="Back" severity="secondary" class=" bg-white shadow-1 hover:bg-gray-100 "   icon="pi pi-arrow-left" @click="prevCallback(); fObj.btn2()" >
+            <i class="pi pi-angle-left" ></i>
+            <p class="my-0 md:mx-5 text-xs md:text-base">Previous</p>
+          </Button>
+          <div class="flex align-items-center gap-2">
+            <p class=" md:flex hidden  text-xs  font-semibold my-0">Your Campaign will be sent to</p>
+            <div class=" flex align-items-center gap-2 text-xs border-1 py-1 px-2 border-round-3xl border-purple-600 hover:bg-purple-200 bg-purple-100 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 20 20">
+                <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
+                  <path d="M5 9a2 2 0 1 0 0-4a2 2 0 0 0 0 4m0 1a3 3 0 1 0 0-6a3 3 0 0 0 0 6" />
+                  <path d="M3.854 8.896a.5.5 0 0 1 0 .708l-.338.337A3.47 3.47 0 0 0 2.5 12.394v1.856a.5.5 0 1 1-1 0v-1.856a4.47 4.47 0 0 1 1.309-3.16l.337-.338a.5.5 0 0 1 .708 0m11.792-.3a.5.5 0 0 0 0 .708l.338.337A3.469 3.469 0 0 1 17 12.094v2.156a.5.5 0 0 0 1 0v-2.156a4.47 4.47 0 0 0-1.309-3.16l-.337-.338a.5.5 0 0 0-.708 0" />
+                  <path d="M14 9a2 2 0 1 1 0-4a2 2 0 0 1 0 4m0 1a3 3 0 1 1 0-6a3 3 0 0 1 0 6m-4.5 3.25a2.5 2.5 0 0 0-2.5 2.5v1.3a.5.5 0 0 1-1 0v-1.3a3.5 3.5 0 0 1 7 0v1.3a.5.5 0 1 1-1 0v-1.3a2.5 2.5 0 0 0-2.5-2.5" />
+                  <path d="M9.5 11.75a2 2 0 1 0 0-4a2 2 0 0 0 0 4m0 1a3 3 0 1 0 0-6a3 3 0 0 0 0 6" />
+                </g>
+              </svg>
+              <p class="my-0 font-semibold">24 Contacts</p></div>
+
+          </div>
+          <Button label="Next"  icon="pi pi-angle-right" iconPos="right" class="bg-purple-600 border-none hover:bg-purple-700" @click="nextCallback(); fObj.btn4()" >
+
+            <p class="my-0  md:mx-5 text-xs md:text-base">Next</p>
+            <i class="pi pi-angle-right" ></i>
+          </Button>
         </div>
-        <div class="flex pt-4 justify-content-between">
-          <Button label="Back" severity="secondary" icon="pi pi-arrow-left" @click="prevCallback();  fObj.btn2()" />
-          <Button label="Next" icon="pi pi-arrow-right" iconPos="right" @click="nextCallback();  fObj.btn4()" />
-        </div>
+
       </template>
     </StepperPanel>
     <StepperPanel header="Header IV">
@@ -908,8 +990,7 @@ function toggelToast () {
   toast.value = !toast.value
 }
 
-
-
+const ingredient = ref('');
 
 
 </script>
