@@ -55,13 +55,13 @@
       <template #content="{ nextCallback }">
         <div class="flex flex-column">
           <div class="w-full flex flex-column align-items-center relative h-screen	 gap-3">
-            <div class="flex flex-column align-items-startw-11 md:w-9  lg:w-7 xl:w-6  gap-1">
+            <div class="flex flex-column align-items-start w-11 md:w-9  lg:w-7 xl:w-6  gap-1">
               <p class="my-0 text-lg md:text-xl font-semibold">Select contacts</p>
             <p class="my-0 text-xs md:text-sm text-gray-400 ">Preview a list of contacts that will be in your campaign</p>
             </div>
           <Card class=" w-11 md:w-9  lg:w-7 xl:w-6 " :pt="{
                   body:{class:'px-3 pb-3 pt-1'}
-                }">
+                }"  >
             <template #title>
               <div class="flex flex-row text-sm align-items-center border-bottom-1 gap-3 border-gray-200">
                 <TriStateCheckbox v-model="checkBox.six" />
@@ -324,7 +324,7 @@
 
                 </div>
 
-                <Card class=" xl:flex hidden  absolute" v-show="toast" style="bottom:29%; left:65% " :pt="{
+                <Card class=" xl:flex hidden  absolute" v-show="toast" style="bottom:29%; left:77% " :pt="{
                   body:{class:'p-3'}
                 }">
                    <template #content >
@@ -797,19 +797,19 @@
       </template>
       <template #content="{ prevCallback, nextCallback }">
         <div class="flex justify-content-center ">
-        <div class="flex flex-column w-5">
+        <div class="flex flex-column w-9 lg:w-7 xl:w-5">
 
-
+<!--                setings-->
           <div class="flex flex-column gap-1 pb-4 border-bottom-1 border-gray-300">
-            <p class="text-2xl font-bold my-0">Settings</p>
-            <p class="text-gray-400 text-sm my-0">Tweak these settings to fit your campaign and audience</p>
+            <p class="  text-xl lg:text-2xl font-bold my-0">Settings</p>
+            <p class="text-gray-400 text-xs lg:text-sm my-0">Tweak these settings to fit your campaign and audience</p>
           </div>
-
+<!--master-->
           <div class="flex flex-column gap-1 mt-5 mb-4">
             <p class="my-0 font-bold ">Master Switch</p>
-            <p class="my-0 text-gray-400 text-sm ">Turn on or off your campaign</p>
+            <p class="my-0 text-gray-400  text-xs lg:text-sm  ">Turn on or off your campaign</p>
           </div>
-
+<!--      switch-->
           <Card class="mb-7" :pt="{
             body:{class:'py-2 px-3'}
           }">
@@ -818,7 +818,7 @@
 
                 <div>
                   <p class="my-0 text-base font-semibold text-purple-400">Active</p>
-                  <p class="my-0 text-sm text-gray-400">Campaign ready to send</p>
+                  <p class="my-0  text-xs lg:text-sm  text-gray-400">Campaign ready to send</p>
                 </div>
 
                 <InputSwitch v-model="checked" />
@@ -829,10 +829,11 @@
             </template>
           </Card>
 
+<!--          task stratigy-->
           <div class="flex flex-column gap-3">
             <div class="flex flex-column gap-1">
-              <p class="my-0 text-base font-bold ">Task Strtigy</p>
-              <p class="my-0 text-gray-400 text-sm">Choose to automate or manually approve tasks</p>
+              <p class="my-0 text-base font-bold ">Task Stratigy</p>
+              <p class="my-0 text-gray-400  text-xs lg:text-sm ">Choose to automate or manually approve tasks</p>
             </div>
             <div class="flex w-full gap-3">
             <div class="flex align-items-center w-6 ">
@@ -871,16 +872,178 @@
       </div>
 
 <!--          email-->
-          <div class="border-1 mb-8">
-          <div class="flex flex-column gap-1 mt-6 mb-4">
+          <div class="mb-4">
+          <div class="  relative">
+          <div class="flex flex-column gap-1 mt-6 mb-3">
             <p class="my-0 font-bold ">Email</p>
-            <p class="my-0 text-gray-400 text-sm ">Outbond email settings</p>
+            <p class="my-0 text-gray-400  text-xs lg:text-sm  ">Outbond email settings</p>
           </div>
 
+
             <label for="name" class="text-xs font-semibold"> Senders Email Account</label>
-          <Dropdown v-model="selectedCity" :options="cities" optionLabel="name" placeholder="Select a City" class="w-full " />
+          <Dropdown v-model="selectedCity" :options="cities" optionLabel="name" placeholder="Stephen Hakime" class=" w-full pl-3" />
+            <svg xmlns="http://www.w3.org/2000/svg" class="absolute" style="bottom:10%; left:1%" width="1em" height="1em" viewBox="0 0 24 24">
+              <g fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="7" r="5" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 22H5.266a2 2 0 0 1-1.985-2.248l.39-3.124A3 3 0 0 1 6.649 14H7m10 2.5l1.5 1.5l2.5-3" />
+              </g>
+            </svg>
+            <p class="my-0 text-purple-700 text-sm absolute" style="bottom:10%; right:6% " >stepham@wiza.com</p>
+            </div>
+       <div class="flex flex-row gap-3 w-full">
+         <div class="w-6 relative">
+           <label class="text-xs font-semibold" for="username"> <p class="my-1"> Send limit</p></label>
+           <InputText id="username" class="w-full" v-model="value" placeholder="200"   aria-describedby="username-help" />
+           <p class=" my-0 text-gray-400 absolute" style="bottom:14%; left: 76%" >per day</p>
+         </div>
+         <div class="w-6 relative">
+           <label class=" flex align-items-center text-xs font-semibold" for="username">
+              <p class="my-1"> Throttle limit</p>
+             <svg xmlns="http://www.w3.org/2000/svg" class="" width="1em" height="1em" viewBox="0 0 24 24">
+               <path fill="currentColor" d="M12 22c-4.714 0-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12s0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22" opacity="0.5" />
+               <path fill="currentColor" d="M12 17.75a.75.75 0 0 0 .75-.75v-6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75M12 7a1 1 0 1 1 0 2a1 1 0 0 1 0-2" />
+             </svg>
+           </label>
+           <InputText id="username" class="w-full" v-model="value" placeholder="5" aria-describedby="username-help" />
+         <p class="my-0 absolute text-gray-400" style="bottom:14%; right:3%">seconds</p>
+         </div>
+       </div>
+          </div>
+
+<!--scheduling-->
+<div class=" flex flex-column gap-2  mt-5 mb-5 ">
+
+  <div>
+    <p class="my-0 lg:text-lg font-semibold">Scheduling</p>
+    <p class="mt-1 text-gray-400  text-xs lg:text-sm  ">Control when email's are sent out</p>
+  </div>
+<!--  double dropdown-->
+  <div class="flex flex-row align-items-end gap-3 w-full">
+    <div class="relative w-6">
+      <label class="text-xs font-semibold" for="username"> <p class="my-1"> Run time </p> </label>
+      <Dropdown v-model="selectedCity" :options="cities" optionLabel="name" placeholder="Start now" class="w-full pl-3" />
+      <svg xmlns="http://www.w3.org/2000/svg" class="absolute" style="left:2%; bottom:20%" width="1em" height="1em" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M19 4h-2V3a1 1 0 0 0-2 0v1H9V3a1 1 0 0 0-2 0v1H5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3m1 15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7h16Zm0-9H4V7a1 1 0 0 1 1-1h2v1a1 1 0 0 0 2 0V6h6v1a1 1 0 0 0 2 0V6h2a1 1 0 0 1 1 1Z" />
+      </svg>
+    </div>
+    <div class="relative w-6">
+      <Dropdown v-model="selectedCity" :options="cities" optionLabel="name" placeholder="No deadline" class="w-full pl-3" />
+      <svg xmlns="http://www.w3.org/2000/svg" class="absolute" style="left:2%; bottom:30%" width="1em" height="1em" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M19 4h-2V3a1 1 0 0 0-2 0v1H9V3a1 1 0 0 0-2 0v1H5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3m1 15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7h16Zm0-9H4V7a1 1 0 0 1 1-1h2v1a1 1 0 0 0 2 0V6h6v1a1 1 0 0 0 2 0V6h2a1 1 0 0 1 1 1Z" />
+      </svg>
+    </div>
+  </div>
+
+<div class="relative">
+  <label for="name" class="text-xs font-semibold"> <p class="my-1">   Sending schedule</p></label>
+  <Dropdown v-model="selectedCity" :options="cities" optionLabel="name" placeholder="7am-9pm" class="  w-full pl-3" />
+  <svg xmlns="http://www.w3.org/2000/svg" class="absolute" style="bottom:20%; left:1%" width="1em" height="1em" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.5 21H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6M16 3v4M8 3v4m-4 4h16m-5 8l2 2l4-4" />
+  </svg>
+ </div>
+
+  <div class="relative">
+    <label class=" flex align-items-center text-xs font-semibold" for="username">
+      <p class="my-1">Fallback timezone</p>
+      <svg xmlns="http://www.w3.org/2000/svg" class="" width="1em" height="1em" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 22c-4.714 0-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12s0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22" opacity="0.5" />
+        <path fill="currentColor" d="M12 17.75a.75.75 0 0 0 .75-.75v-6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75M12 7a1 1 0 1 1 0 2a1 1 0 0 1 0-2" />
+      </svg>
+    </label>
+    <Dropdown v-model="selectedCity" :options="cities" optionLabel="name" placeholder="Eastern Time" class="  w-full pl-3" />
+    <svg xmlns="http://www.w3.org/2000/svg"  class="absolute" style="bottom:20%; left:1%" width="1em" height="1em" viewBox="0 0 256 256">
+      <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.12 104.12 0 0 0 128 24m88 104a87.6 87.6 0 0 1-3.33 24h-38.51a157.4 157.4 0 0 0 0-48h38.51a87.6 87.6 0 0 1 3.33 24m-114 40h52a115.1 115.1 0 0 1-26 45a115.3 115.3 0 0 1-26-45m-3.9-16a140.8 140.8 0 0 1 0-48h59.88a140.8 140.8 0 0 1 0 48ZM40 128a87.6 87.6 0 0 1 3.33-24h38.51a157.4 157.4 0 0 0 0 48H43.33A87.6 87.6 0 0 1 40 128m114-40h-52a115.1 115.1 0 0 1 26-45a115.3 115.3 0 0 1 26 45m52.33 0h-35.62a135.3 135.3 0 0 0-22.3-45.6A88.29 88.29 0 0 1 206.37 88Zm-98.74-45.6A135.3 135.3 0 0 0 85.29 88H49.63a88.29 88.29 0 0 1 57.96-45.6M49.63 168h35.66a135.3 135.3 0 0 0 22.3 45.6A88.29 88.29 0 0 1 49.63 168m98.78 45.6a135.3 135.3 0 0 0 22.3-45.6h35.66a88.29 88.29 0 0 1-57.96 45.6" />
+    </svg>
+  </div>
+
+</div>
+
+
+
+<!--          miscellanyous-->
+  <div class=" flex flex-column gap-2  mt-5 mb-8">
+
+            <div>
+              <p class="my-0 lg:text-lg font-semibold">Miscellaneous</p>
+              <p class="mt-1 text-gray-400  text-xs lg:text-sm  ">Extra champagin settings</p>
             </div>
 
+              <div class="relative">
+                <label class=" flex align-items-center gap-1 text-xs font-semibold" for="username">
+                  <p class="my-1"> Global CC</p>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="" width="1em" height="1em" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 22c-4.714 0-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12s0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22" opacity="0.5" />
+                    <path fill="currentColor" d="M12 17.75a.75.75 0 0 0 .75-.75v-6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75M12 7a1 1 0 1 1 0 2a1 1 0 0 1 0-2" />
+                  </svg>
+                </label>
+                <InputText type="text" v-model="value " placeholder="add email"  class="w-full pl-4" />
+                <svg xmlns="http://www.w3.org/2000/svg"  class="absolute" style="bottom:17%; left:1%"  width="1em" height="1em" viewBox="0 0 48 48">
+                  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                    <path d="M44 24V9H4v30h20m20-5H30m9-5l5 5l-5 5" />
+                    <path d="m4 9l20 15L44 9" />
+                  </g>
+                </svg>
+            </div>
+
+            <div class="relative">
+              <label class=" flex align-items-center gap-1 text-xs font-semibold" for="username">
+                <p class="my-1">Global BCC</p>
+                <svg xmlns="http://www.w3.org/2000/svg" class="" width="1em" height="1em" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M12 22c-4.714 0-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12s0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22" opacity="0.5" />
+                  <path fill="currentColor" d="M12 17.75a.75.75 0 0 0 .75-.75v-6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75M12 7a1 1 0 1 1 0 2a1 1 0 0 1 0-2" />
+                </svg>
+              </label>
+              <InputText type="text" v-model="value " placeholder="add email"  class="w-full pl-4" />
+              <svg xmlns="http://www.w3.org/2000/svg"  class="absolute" style="bottom:17%; left:1%"  width="1em" height="1em" viewBox="0 0 48 48">
+                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                  <path d="M44 24V9H4v30h20m20-5H30m9-5l5 5l-5 5" />
+                  <path d="m4 9l20 15L44 9" />
+                </g>
+              </svg>
+             </div>
+
+          </div>
+
+
+
+<!--tracking-->
+          <div class=" flex flex-column gap-2  mt-5 mb-8">
+
+            <div class="border-bottom-1 py-2 border-gray-300">
+              <p class="my-0 lg:text-lg font-bold">Tracking</p>
+              <p class="mt-1 text-gray-400  text-xs lg:text-sm  ">Knowing whats  happening in your campagin</p>
+            </div>
+
+            <div class=" flex align-items-center justify-content-between border-bottom-1  border-gray-300 relative">
+
+              <div class="">
+                <p class="my-0  font-semibold">Track openings</p>
+                <p class="mt-1 text-gray-400  text-xs lg:text-sm  ">Keet track of who's opening your emails</p>
+              </div>
+
+              <InputSwitch v-model="checked" />
+            </div>
+
+            <div class=" flex align-items-center justify-content-between border-bottom-1  border-gray-300 relative">
+
+              <div class="">
+                  <p class="my-0 font-semibold">Track link clicks</p>
+                <p class="mt-1 text-gray-400  text-xs lg:text-sm  ">Track which links are most populer</p>
+              </div>
+
+              <InputSwitch v-model="checked" />
+            </div>
+
+            <div class=" flex align-items-center justify-content-between border-bottom-1  border-gray-300 relative">
+
+              <div class="">
+                <p class="my-0 font-semibold">Include unsubscribe link</p>
+                <p class="mt-1 text-gray-400  text-xs lg:text-sm  ">Allow recipients to unsubscribe</p>
+              </div>
+
+              <InputSwitch v-model="checked" />
+            </div>
+          </div>
 
 
 
@@ -916,6 +1079,7 @@
         </div>
 
       </template>
+
     </StepperPanel>
     <StepperPanel header="Header IV">
       <template #header>
