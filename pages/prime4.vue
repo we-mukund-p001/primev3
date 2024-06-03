@@ -33,31 +33,31 @@
 <!--main-->
 <div class="  ">
   <Stepper :pt="{
-        nav: {class: ' w-11 md:w-9 lg:w-7  xl:w-5 m-auto  relative'},
+        nav: {class: ' w-12 md:w-9 lg:w-7  xl:w-5 m-auto  relative'},
         root:{class: ' '},
         panelContainer:{class: ' '},
         stepperpanel:{class:'  '},
       }">
     <StepperPanel header="Header I">
       <template #header>
-        <div class="flex flex-row align-items-center  cursor-pointer  px-2 py-1 border-round-3xl gap-1 text-xs lg:text-base text-gray-600 "
+        <div class="flex flex-row align-items-start  cursor-pointer md:px-2 px-1 py-1 border-round-3xl gap-1 text-xs lg:text-base text-gray-600 "
              :class="!glowBtn.one? ' border-2 border-purple-500 bg-purple-100':''"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+          <svg xmlns="http://www.w3.org/2000/svg" class=""  width="1em" height="1em" viewBox="0 0 24 24">
             <g fill="none" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="m8 12.5l3 3l5-6" />
               <circle cx="12" cy="12" r="10" />
             </g>
           </svg>
-       <p class="my-0">1. Contacts</p>
+       <p class="my-0">1.Contacts</p>
         </div>
       </template>
       <template #content="{ nextCallback }">
         <div class="flex flex-column">
           <div class="w-full flex flex-column align-items-center relative h-screen	 gap-3">
             <div class="flex flex-column align-items-startw-11 md:w-9  lg:w-7 xl:w-6  gap-1">
-              <p class="my-0 text-xl font-semibold">Select contacts</p>
-            <p class="my-0 text-sm text-gray-400 ">Preview a list of contacts that will be in your campaign</p>
+              <p class="my-0 text-lg md:text-xl font-semibold">Select contacts</p>
+            <p class="my-0 text-xs md:text-sm text-gray-400 ">Preview a list of contacts that will be in your campaign</p>
             </div>
           <Card class=" w-11 md:w-9  lg:w-7 xl:w-6 " :pt="{
                   body:{class:'px-3 pb-3 pt-1'}
@@ -380,13 +380,13 @@
     </StepperPanel>
     <StepperPanel header="Header II">
       <template #header>
-        <div class="flex flex-row align-items-center cursor-pointer  px-2 py-1 border-round-3xl gap-1 text-xs lg:text-base  text-gray-600"
+        <div class="flex flex-row align-items-start cursor-pointer  md:px-2 px-1 py-1 border-round-3xl gap-1 text-xs lg:text-base  text-gray-600"
              :class="!glowBtn.two? '  border-2 border-purple-500 bg-purple-100':''"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
             <path fill="currentColor" d="M12 14L1 8l11-6l11 6zm0 4L1.575 12.325l2.1-1.15L12 15.725l8.325-4.55l2.1 1.15zm0 4L1.575 16.325l2.1-1.15L12 19.725l8.325-4.55l2.1 1.15zm0-10.275L18.825 8L12 4.275L5.175 8zM12 8" />
           </svg>
-          <p class="my-0">2. Steps</p>
+          <p class="my-0">2.Steps</p>
         </div>
       </template>
       <template #content="{ prevCallback, nextCallback }" >
@@ -786,13 +786,13 @@
     </StepperPanel>
     <StepperPanel header="Header III">
       <template #header>
-        <div class="flex flex-row align-items-center   cursor-pointer  px-2 py-1 border-round-3xl gap-1 text-xs lg:text-base text-gray-600"
+        <div class="flex flex-row align-items-start  cursor-pointer  md:px-2 px-1 py-1 border-round-3xl gap-1 text-xs lg:text-base text-gray-600"
              :class="!glowBtn.three? '  border-2 border-purple-500 bg-purple-100':''"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
             <path fill="currentColor" d="M19.9 12.66a1 1 0 0 1 0-1.32l1.28-1.44a1 1 0 0 0 .12-1.17l-2-3.46a1 1 0 0 0-1.07-.48l-1.88.38a1 1 0 0 1-1.15-.66l-.61-1.83a1 1 0 0 0-.95-.68h-4a1 1 0 0 0-1 .68l-.56 1.83a1 1 0 0 1-1.15.66L5 4.79a1 1 0 0 0-1 .48L2 8.73a1 1 0 0 0 .1 1.17l1.27 1.44a1 1 0 0 1 0 1.32L2.1 14.1a1 1 0 0 0-.1 1.17l2 3.46a1 1 0 0 0 1.07.48l1.88-.38a1 1 0 0 1 1.15.66l.61 1.83a1 1 0 0 0 1 .68h4a1 1 0 0 0 .95-.68l.61-1.83a1 1 0 0 1 1.15-.66l1.88.38a1 1 0 0 0 1.07-.48l2-3.46a1 1 0 0 0-.12-1.17ZM18.41 14l.8.9l-1.28 2.22l-1.18-.24a3 3 0 0 0-3.45 2L12.92 20h-2.56L10 18.86a3 3 0 0 0-3.45-2l-1.18.24l-1.3-2.21l.8-.9a3 3 0 0 0 0-4l-.8-.9l1.28-2.2l1.18.24a3 3 0 0 0 3.45-2L10.36 4h2.56l.38 1.14a3 3 0 0 0 3.45 2l1.18-.24l1.28 2.22l-.8.9a3 3 0 0 0 0 3.98m-6.77-6a4 4 0 1 0 4 4a4 4 0 0 0-4-4m0 6a2 2 0 1 1 2-2a2 2 0 0 1-2 2" />
           </svg>
-          <p class="my-0">3. Settings</p>
+          <p class="my-0">3.Settings</p>
         </div>
       </template>
       <template #content="{ prevCallback, nextCallback }">
@@ -919,13 +919,13 @@
     </StepperPanel>
     <StepperPanel header="Header IV">
       <template #header>
-        <div class="flex flex-row align-items-center   cursor-pointer px-2 py-1 border-round-3xl gap-1 text-xs lg:text-base text-gray-600"
+        <div class="flex flex-row align-items-start   cursor-pointer md:px-2 px-1 py-1 border-round-3xl gap-1 text-xs lg:text-base text-gray-600"
         :class="!glowBtn.four? '  border-2 border-purple-500 bg-purple-100':''"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256">
             <path fill="currentColor" d="M247.31 124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57 61.26 162.88 48 128 48S61.43 61.26 36.34 86.35C17.51 105.18 9 124 8.69 124.76a8 8 0 0 0 0 6.5c.35.79 8.82 19.57 27.65 38.4C61.43 194.74 93.12 208 128 208s66.57-13.26 91.66-38.34c18.83-18.83 27.3-37.61 27.65-38.4a8 8 0 0 0 0-6.5M128 192c-30.78 0-57.67-11.19-79.93-33.25A133.5 133.5 0 0 1 25 128a133.3 133.3 0 0 1 23.07-30.75C70.33 75.19 97.22 64 128 64s57.67 11.19 79.93 33.25A133.5 133.5 0 0 1 231.05 128c-7.21 13.46-38.62 64-103.05 64m0-112a48 48 0 1 0 48 48a48.05 48.05 0 0 0-48-48m0 80a32 32 0 1 1 32-32a32 32 0 0 1-32 32" />
           </svg>
-          <p class="my-0">4. Overview</p>
+          <p class="my-0">4.Overview</p>
         </div>
       </template>
       <template #content="{ prevCallback }">
