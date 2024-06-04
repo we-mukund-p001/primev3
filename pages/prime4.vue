@@ -40,7 +40,7 @@
       }">
     <StepperPanel header="Header I">
       <template #header>
-        <div class="flex flex-row align-items-start  cursor-pointer md:px-2 px-1 py-1 border-round-3xl gap-1 text-xs lg:text-base text-gray-600 "
+        <div class="flex flex-row align-items-center  cursor-pointer md:px-2 px-1 py-1 border-round-3xl gap-1 text-xs lg:text-base text-gray-600 "
              :class="!glowBtn.one? ' border-2 border-purple-500 bg-purple-100':''"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class=""  width="1em" height="1em" viewBox="0 0 24 24">
@@ -352,7 +352,7 @@
 
 
 <!--        nextBtn-->
-        <div class="flex py-3   bg-white fixed px-3 " style="bottom:0%; right:0%; left:0% ">
+        <div class="flex py-3  border-top-1 border-gray-100  bg-white fixed px-3 " style="bottom:0%; right:0%; left:0% ">
 
           <div class="flex align-items-center w-7 justify-content-end gap-2">
             <p class=" md:flex hidden  text-xs  font-semibold my-0">Your Campaign will be sent to</p>
@@ -380,7 +380,7 @@
     </StepperPanel>
     <StepperPanel header="Header II">
       <template #header>
-        <div class="flex flex-row align-items-start cursor-pointer  md:px-2 px-1 py-1 border-round-3xl gap-1 text-xs lg:text-base  text-gray-600"
+        <div class="flex flex-row align-items-center cursor-pointer  md:px-2 px-1 py-1 border-round-3xl gap-1 text-xs lg:text-base  text-gray-600"
              :class="!glowBtn.two? '  border-2 border-purple-500 bg-purple-100':''"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
@@ -786,7 +786,7 @@
     </StepperPanel>
     <StepperPanel header="Header III">
       <template #header>
-        <div class="flex flex-row align-items-start  cursor-pointer  md:px-2 px-1 py-1 border-round-3xl gap-1 text-xs lg:text-base text-gray-600"
+        <div class="flex flex-row align-items-center  cursor-pointer  md:px-2 px-1 py-1 border-round-3xl gap-1 text-xs lg:text-base text-gray-600"
              :class="!glowBtn.three? '  border-2 border-purple-500 bg-purple-100':''"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
@@ -797,18 +797,20 @@
       </template>
       <template #content="{ prevCallback, nextCallback }">
         <div class="flex justify-content-center ">
-        <div class="flex flex-column w-9 lg:w-7 xl:w-5">
+        <div class="flex flex-column w-12 md:w-9 lg:w-7 xl:w-5 xl:px-4 ">
 
 <!--                setings-->
           <div class="flex flex-column gap-1 pb-4 border-bottom-1 border-gray-300">
             <p class="  text-xl lg:text-2xl font-bold my-0">Settings</p>
             <p class="text-gray-400 text-xs lg:text-sm my-0">Tweak these settings to fit your campaign and audience</p>
           </div>
+
 <!--master-->
           <div class="flex flex-column gap-1 mt-5 mb-4">
             <p class="my-0 font-bold ">Master Switch</p>
             <p class="my-0 text-gray-400  text-xs lg:text-sm  ">Turn on or off your campaign</p>
           </div>
+
 <!--      switch-->
           <Card class="mb-7" :pt="{
             body:{class:'py-2 px-3'}
@@ -821,7 +823,7 @@
                   <p class="my-0  text-xs lg:text-sm  text-gray-400">Campaign ready to send</p>
                 </div>
 
-                <InputSwitch v-model="checked" />
+                <InputSwitch v-model="Tpage.one" />
 
 
 
@@ -836,13 +838,13 @@
               <p class="my-0 text-gray-400  text-xs lg:text-sm ">Choose to automate or manually approve tasks</p>
             </div>
             <div class="flex w-full gap-3">
-            <div class="flex align-items-center w-6 ">
-              <label for="ingredient1" class=" p-2 shadow-1 border-round-xl flex flex-column w-full gap-3" :class="ingredient == 'Cheese'?'border-1  border-purple-500': '' "  >
+            <div class="flex align-items-center   w-6 ">
+              <label for="ingredient1" class=" p-2 shadow-1 border-round-xl flex flex-column w-full gap-3 cursor-pointer hover:bg-purple-50" :class="Tpage.two == 'Cheese'?'border-1  border-purple-500': '' "  >
                 <div class="flex justify-content-between">
                   <svg xmlns="http://www.w3.org/2000/svg"  class="text-purple-600" width="1em" height="1em" viewBox="0 0 24 24">
                     <path fill="currentColor" d="m9 4l2.5 5.5L17 12l-5.5 2.5L9 20l-2.5-5.5L1 12l5.5-2.5zm0 4.83L8 11l-2.17 1L8 13l1 2.17L10 13l2.17-1L10 11zM19 9l-1.26-2.74L15 5l2.74-1.25L19 1l1.25 2.75L23 5l-2.75 1.26zm0 14l-1.26-2.74L15 19l2.74-1.25L19 15l1.25 2.75L23 19l-2.75 1.26z" />
                   </svg>
-              <RadioButton v-model="ingredient" inputId="ingredient1" name="pizza" value="Cheese" />
+              <RadioButton v-model="Tpage.two" inputId="ingredient1" name="pizza" value="Cheese" />
 
                 </div>
                 <div class="flex flex-column gap-1">
@@ -852,13 +854,13 @@
 
              </label>
             </div>
-            <div class="flex align-items-center w-6 ">
-              <label for="ingredient2" class=" p-2  flex flex-column shadow-1 border-round-xl w-full gap-3" :class="ingredient == 'Mushroom'?'border-1  border-purple-500': '' " >
+            <div class="flex align-items-center  w-6 ">
+              <label for="ingredient2" class=" p-2  flex flex-column shadow-1 border-round-xl w-full gap-3 cursor-pointer hover:bg-purple-50" :class="Tpage.two == 'Mushroom'?'border-1  border-purple-500': '' " >
                 <div class="flex justify-content-between">
                   <svg xmlns="http://www.w3.org/2000/svg" class="text-purple-600" width="1em" height="1em" viewBox="0 0 256 256">
                     <path fill="currentColor" d="M58 76a58 58 0 0 1 116 0a6 6 0 0 1-12 0a46 46 0 0 0-92 0a6 6 0 0 1-12 0m138 46a25.87 25.87 0 0 0-14.59 4.49A26 26 0 0 0 142 110.1V76a26 26 0 0 0-52 0v87l-7.53-12.1a26 26 0 0 0-45 26.13l29.32 50A6 6 0 0 0 77.16 221l-29.29-50a14 14 0 0 1 24.25-14a1 1 0 0 0 .1.17l18.68 30A6 6 0 0 0 102 184V76a14 14 0 0 1 28 0v68a6 6 0 0 0 12 0v-12a14 14 0 0 1 28 0v20a6 6 0 0 0 12 0v-4a14 14 0 0 1 28 0v36c0 22.13-7.3 37.18-7.37 37.32a6 6 0 0 0 2.69 8a5.8 5.8 0 0 0 2.68.68a6 6 0 0 0 5.38-3.32c.35-.7 8.63-17.55 8.63-42.68v-36A26 26 0 0 0 196 122" />
                   </svg>
-                  <RadioButton v-model="ingredient" inputId="ingredient2" name="pizza" value="Mushroom" />
+                  <RadioButton v-model="Tpage.two" inputId="ingredient2" name="pizza" value="Mushroom" />
 
                 </div>
                 <div class="flex flex-column gap-1">
@@ -872,8 +874,8 @@
       </div>
 
 <!--          email-->
-          <div class="mb-4">
-          <div class="  relative">
+          <div class="mb-3">
+          <div class=" mb-2 relative">
           <div class="flex flex-column gap-1 mt-6 mb-3">
             <p class="my-0 font-bold ">Email</p>
             <p class="my-0 text-gray-400  text-xs lg:text-sm  ">Outbond email settings</p>
@@ -881,22 +883,22 @@
 
 
             <label for="name" class="text-xs font-semibold"> Senders Email Account</label>
-          <Dropdown v-model="selectedCity" :options="cities" optionLabel="name" placeholder="Stephen Hakime" class=" w-full pl-3" />
+          <Dropdown v-model="selectedEmail" :options="mail" optionLabel="name" placeholder="Stephen Hakime" class=" w-full pl-3" />
             <svg xmlns="http://www.w3.org/2000/svg" class="absolute" style="bottom:10%; left:1%" width="1em" height="1em" viewBox="0 0 24 24">
               <g fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="12" cy="7" r="5" />
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 22H5.266a2 2 0 0 1-1.985-2.248l.39-3.124A3 3 0 0 1 6.649 14H7m10 2.5l1.5 1.5l2.5-3" />
               </g>
             </svg>
-            <p class="my-0 text-purple-700 text-sm absolute" style="bottom:10%; right:6% " >stepham@wiza.com</p>
+            <p class="my-0 text-purple-700 text-sm absolute md:flex hidden" style="bottom:10%; right:6% " >stepham@wiza.com</p>
             </div>
-       <div class="flex flex-row gap-3 w-full">
-         <div class="w-6 relative">
+       <div class="flex md:flex-row flex-column gap-2 w-full">
+         <div class="md:w-6 relative">
            <label class="text-xs font-semibold" for="username"> <p class="my-1"> Send limit</p></label>
            <InputText id="username" class="w-full" v-model="value" placeholder="200"   aria-describedby="username-help" />
-           <p class=" my-0 text-gray-400 absolute" style="bottom:14%; left: 76%" >per day</p>
+           <p class=" my-0 text-gray-400 absolute" style="bottom:14%; right: 3%" >per day</p>
          </div>
-         <div class="w-6 relative">
+         <div class="md:w-6 relative">
            <label class=" flex align-items-center text-xs font-semibold" for="username">
               <p class="my-1"> Throttle limit</p>
              <svg xmlns="http://www.w3.org/2000/svg" class="" width="1em" height="1em" viewBox="0 0 24 24">
@@ -911,23 +913,23 @@
           </div>
 
 <!--scheduling-->
-<div class=" flex flex-column gap-2  mt-5 mb-5 ">
+<div class=" flex flex-column gap-2  mt-5 mb-4 ">
 
   <div>
     <p class="my-0 lg:text-lg font-semibold">Scheduling</p>
-    <p class="mt-1 text-gray-400  text-xs lg:text-sm  ">Control when email's are sent out</p>
+    <p class="my-0 py-1 text-gray-400  text-xs lg:text-sm  ">Control when email's are sent out</p>
   </div>
 <!--  double dropdown-->
-  <div class="flex flex-row align-items-end gap-3 w-full">
-    <div class="relative w-6">
+  <div class="flex md:flex-row flex-column align-items-end gap-3 md:gap-2 w-full">
+    <div class="relative w-full md:w-6">
       <label class="text-xs font-semibold" for="username"> <p class="my-1"> Run time </p> </label>
-      <Dropdown v-model="selectedCity" :options="cities" optionLabel="name" placeholder="Start now" class="w-full pl-3" />
+      <Dropdown v-model="selectedTime" :options="Time" optionLabel="name" placeholder="Start now" class="w-full pl-3" />
       <svg xmlns="http://www.w3.org/2000/svg" class="absolute" style="left:2%; bottom:20%" width="1em" height="1em" viewBox="0 0 24 24">
         <path fill="currentColor" d="M19 4h-2V3a1 1 0 0 0-2 0v1H9V3a1 1 0 0 0-2 0v1H5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3m1 15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7h16Zm0-9H4V7a1 1 0 0 1 1-1h2v1a1 1 0 0 0 2 0V6h6v1a1 1 0 0 0 2 0V6h2a1 1 0 0 1 1 1Z" />
       </svg>
     </div>
-    <div class="relative w-6">
-      <Dropdown v-model="selectedCity" :options="cities" optionLabel="name" placeholder="No deadline" class="w-full pl-3" />
+    <div class="relative w-full md:w-6">
+      <Dropdown v-model="selectedDeadline" :options="Deadline" optionLabel="name" placeholder="No deadline" class="w-full pl-3" />
       <svg xmlns="http://www.w3.org/2000/svg" class="absolute" style="left:2%; bottom:30%" width="1em" height="1em" viewBox="0 0 24 24">
         <path fill="currentColor" d="M19 4h-2V3a1 1 0 0 0-2 0v1H9V3a1 1 0 0 0-2 0v1H5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3m1 15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7h16Zm0-9H4V7a1 1 0 0 1 1-1h2v1a1 1 0 0 0 2 0V6h6v1a1 1 0 0 0 2 0V6h2a1 1 0 0 1 1 1Z" />
       </svg>
@@ -936,7 +938,7 @@
 
 <div class="relative">
   <label for="name" class="text-xs font-semibold"> <p class="my-1">   Sending schedule</p></label>
-  <Dropdown v-model="selectedCity" :options="cities" optionLabel="name" placeholder="7am-9pm" class="  w-full pl-3" />
+  <Dropdown v-model="selectedSche" :options="Sche" optionLabel="name" placeholder="7am-9pm" class="w-full pl-3" />
   <svg xmlns="http://www.w3.org/2000/svg" class="absolute" style="bottom:20%; left:1%" width="1em" height="1em" viewBox="0 0 24 24">
     <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.5 21H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6M16 3v4M8 3v4m-4 4h16m-5 8l2 2l4-4" />
   </svg>
@@ -950,7 +952,7 @@
         <path fill="currentColor" d="M12 17.75a.75.75 0 0 0 .75-.75v-6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75M12 7a1 1 0 1 1 0 2a1 1 0 0 1 0-2" />
       </svg>
     </label>
-    <Dropdown v-model="selectedCity" :options="cities" optionLabel="name" placeholder="Eastern Time" class="  w-full pl-3" />
+    <Dropdown v-model="selectedZone" :options="Zone" optionLabel="name" placeholder="Eastern Time" class="w-full pl-3" />
     <svg xmlns="http://www.w3.org/2000/svg"  class="absolute" style="bottom:20%; left:1%" width="1em" height="1em" viewBox="0 0 256 256">
       <path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.12 104.12 0 0 0 128 24m88 104a87.6 87.6 0 0 1-3.33 24h-38.51a157.4 157.4 0 0 0 0-48h38.51a87.6 87.6 0 0 1 3.33 24m-114 40h52a115.1 115.1 0 0 1-26 45a115.3 115.3 0 0 1-26-45m-3.9-16a140.8 140.8 0 0 1 0-48h59.88a140.8 140.8 0 0 1 0 48ZM40 128a87.6 87.6 0 0 1 3.33-24h38.51a157.4 157.4 0 0 0 0 48H43.33A87.6 87.6 0 0 1 40 128m114-40h-52a115.1 115.1 0 0 1 26-45a115.3 115.3 0 0 1 26 45m52.33 0h-35.62a135.3 135.3 0 0 0-22.3-45.6A88.29 88.29 0 0 1 206.37 88Zm-98.74-45.6A135.3 135.3 0 0 0 85.29 88H49.63a88.29 88.29 0 0 1 57.96-45.6M49.63 168h35.66a135.3 135.3 0 0 0 22.3 45.6A88.29 88.29 0 0 1 49.63 168m98.78 45.6a135.3 135.3 0 0 0 22.3-45.6h35.66a88.29 88.29 0 0 1-57.96 45.6" />
     </svg>
@@ -959,13 +961,12 @@
 </div>
 
 
-
 <!--          miscellanyous-->
-  <div class=" flex flex-column gap-2  mt-5 mb-8">
+  <div class=" flex flex-column gap-2  mt-5 mb-4">
 
             <div>
-              <p class="my-0 lg:text-lg font-semibold">Miscellaneous</p>
-              <p class="mt-1 text-gray-400  text-xs lg:text-sm  ">Extra champagin settings</p>
+              <p class="my-0 lg:text-base font-semibold">Miscellaneous</p>
+              <p class="my-0 pt-1 text-gray-400  text-xs lg:text-sm  ">Extra champagin settings</p>
             </div>
 
               <div class="relative">
@@ -1005,13 +1006,12 @@
           </div>
 
 
-
 <!--tracking-->
           <div class=" flex flex-column gap-2  mt-5 mb-8">
 
             <div class="border-bottom-1 py-2 border-gray-300">
-              <p class="my-0 lg:text-lg font-bold">Tracking</p>
-              <p class="mt-1 text-gray-400  text-xs lg:text-sm  ">Knowing whats  happening in your campagin</p>
+              <p class="my-0 lg:text-lg font-semibold">Tracking</p>
+              <p class="my-0 py-1 text-gray-400  text-xs lg:text-sm  ">Knowing whats  happening in your campagin</p>
             </div>
 
             <div class=" flex align-items-center justify-content-between border-bottom-1  border-gray-300 relative">
@@ -1021,7 +1021,7 @@
                 <p class="mt-1 text-gray-400  text-xs lg:text-sm  ">Keet track of who's opening your emails</p>
               </div>
 
-              <InputSwitch v-model="checked" />
+              <InputSwitch v-model="Tpage.three" />
             </div>
 
             <div class=" flex align-items-center justify-content-between border-bottom-1  border-gray-300 relative">
@@ -1031,7 +1031,7 @@
                 <p class="mt-1 text-gray-400  text-xs lg:text-sm  ">Track which links are most populer</p>
               </div>
 
-              <InputSwitch v-model="checked" />
+              <InputSwitch v-model="Tpage.four" />
             </div>
 
             <div class=" flex align-items-center justify-content-between border-bottom-1  border-gray-300 relative">
@@ -1041,18 +1041,16 @@
                 <p class="mt-1 text-gray-400  text-xs lg:text-sm  ">Allow recipients to unsubscribe</p>
               </div>
 
-              <InputSwitch v-model="checked" />
+              <InputSwitch v-model="Tpage.five" />
             </div>
           </div>
-
-
 
 
 
 </div>
 </div>
         <!--     endButtons-->
-        <div class="flex py-3 justify-content-between bg-white fixed px-3 " style="bottom:0%; right:0%; left:0% ">
+        <div class="flex py-3 justify-content-between bg-white border-top-1 border-gray-100 fixed px-3 " style="bottom:0%; right:0%; left:0% ">
           <Button label="Back" severity="secondary" class=" bg-white shadow-1 hover:bg-gray-100 "   icon="pi pi-arrow-left" @click="prevCallback(); fObj.btn2()" >
             <i class="pi pi-angle-left" ></i>
             <p class="my-0 md:mx-5 text-xs md:text-base">Previous</p>
@@ -1083,7 +1081,7 @@
     </StepperPanel>
     <StepperPanel header="Header IV">
       <template #header>
-        <div class="flex flex-row align-items-start   cursor-pointer md:px-2 px-1 py-1 border-round-3xl gap-1 text-xs lg:text-base text-gray-600"
+        <div class="flex flex-row align-items-center   cursor-pointer md:px-2 px-1 py-1 border-round-3xl gap-1 text-xs lg:text-base text-gray-600"
         :class="!glowBtn.four? '  border-2 border-purple-500 bg-purple-100':''"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256">
@@ -1188,16 +1186,58 @@ function toggelToast () {
   toast.value = !toast.value
 }
 
-const ingredient = ref('');
 
-const selectedCity = ref();
-const cities = ref([
-  { name: 'New York', code: 'NY' },
-  { name: 'Rome', code: 'RM' },
-  { name: 'London', code: 'LDN' },
-  { name: 'Istanbul', code: 'IST' },
-  { name: 'Paris', code: 'PRS' }
+const selectedEmail = ref();
+const mail = ref([
+  { name: 'Stephen Hakime', code: 'NY' },
+  { name: 'Stephen Hakime 1', code: 'RM' },
+  { name: 'Stephen Hakime 2', code: 'LDN' },
+  { name: 'Stephen Hakime 3', code: 'IST' },
+  { name: 'Stephen Hakime 4', code: 'PRS' }
 ]);
+
+const selectedTime = ref();
+const Time   = ref([
+  { name: 'Start Now', code: 'NY' },
+  { name: 'Start Tommorow', code: 'RM' },
+  { name: ' Start Today', code: 'LDN' },
+  ]);
+
+const selectedDeadline = ref();
+const Deadline = ref([
+  { name: 'No Deadline', code: 'NY' },
+  { name: 'Today', code: 'RM' },
+  { name: 'Tomorrow', code: 'LDN' },
+ ]);
+
+const selectedSche = ref();
+const Sche = ref([
+  { name: '7am to 9PM (Monday to Friday)', code: 'NY' },
+  { name: '7am to 7PM (Monday to Friday)', code: 'RM' },
+  { name: '7am to 6PM (Monday to Friday)', code: 'LDN' },
+  { name: '7am to 5PM (Monday to Friday)', code: 'IST' },
+  { name: '7am to 4PM (Monday to Friday)', code: 'PRS' }
+]);
+
+
+const selectedZone = ref();
+const Zone = ref([
+  { name: 'Eastern Time', code: 'NY' },
+  { name: 'Eastern Time', code: 'RM' },
+  { name: 'Eastern Time', code: 'LDN' },
+  { name: 'Eastern Time', code: 'IST' },
+  { name: 'Eastern Time', code: 'PRS' }
+]);
+
+
+const Tpage = reactive({
+  one:false,
+  two:'',
+  three:false,
+  four:false,
+  five:false,
+})
+
 </script>
 
 <style scoped>
