@@ -1,6 +1,6 @@
 <template>
 
-  <div class=" flex  align-items-center justify-content-between mt-3 w-full px-2 md:px-4 ">
+  <div class=" flex  align-items-center justify-content-between mt-3 w-full px-2 md:px-4 relative ">
 <!--    left-->
     <div class="flex flex-row align-items-center gap-0 md:gap-2 ">
     <div>
@@ -27,13 +27,21 @@
     <p class="font-bold hover:underline cursor-pointer text-xs md:text-base ">Feedback</p>
     <p class="text-gray-500 text-xs md:text-sm">Draft saved 10 seconds ago</p>
     </div>
+
+
+    <Button label="Secondary" severity="secondary" class="lg:flex hidden gap-2 absolute px-2 shadow-1" style="bottom: -75%; right:2%" text>
+      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256">
+        <path fill="currentColor" d="M234.49 111.07L90.41 22.94A20 20 0 0 0 60 39.87v176.26a20 20 0 0 0 30.41 16.93l144.08-88.13a19.82 19.82 0 0 0 0-33.86M84 208.85V47.15L216.16 128Z" />
+      </svg>
+      <p class="my-0 font-bold" > Tutorial </p>
+    </Button>
   </div>
 
 
 <!--main-->
 <div class="  ">
   <Stepper :pt="{
-        nav: {class: ' w-12 md:w-9 lg:w-7  xl:w-5 m-auto  relative'},
+        nav: {class: ' w-12 md:w-9 lg:w-7  xl:w-5 m-auto   '},
         root:{class: ' '},
         panelContainer:{class: ' '},
         stepperpanel:{class:'  '},
@@ -737,10 +745,18 @@
          </div>
 
 <!--         both-->
-         <Editor v-model="value" editorStyle="height: 320px" :pt="{
-      root:{class:' flex flex-column-reverse'},
-      header:{class:' text-red-500'}
-    }" />
+
+
+
+         <ClientOnly>
+           <Quill/>
+         </ClientOnly>
+
+
+         <!--         <Editor v-model="value" editorStyle="height: 320px" :pt="{-->
+<!--      root:{class:' flex flex-column-reverse'},-->
+<!--      header:{class:' text-red-500'}-->
+<!--    }" />-->
 
 <!--         end buttons-->
 <div class="flex justify-content-between py-2 gap-1 md:gap-0 ">
@@ -1099,20 +1115,15 @@
         </div>
       </template>
     </StepperPanel>
+
   </Stepper>
-  <Button label="Secondary" severity="secondary" class="lg:flex hidden gap-2 absolute px-2 shadow-1 " style="bottom: 85%; right:2%" text>
-    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256">
-      <path fill="currentColor" d="M234.49 111.07L90.41 22.94A20 20 0 0 0 60 39.87v176.26a20 20 0 0 0 30.41 16.93l144.08-88.13a19.82 19.82 0 0 0 0-33.86M84 208.85V47.15L216.16 128Z" />
-    </svg>
-   <p class="my-0 font-bold" > Tutorial </p>
-  </Button>
+
 
 </div>
 
 </template>
 
 <script setup>
-import Editor from 'primevue/editor';
 
 const value = ref('');
 
