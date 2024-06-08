@@ -24,6 +24,14 @@
 
 
   </NuxtLink>
+
+
+  <NuxtLink  to="/prime4" class="no-underline bg-blue-500 text-white text-base  flex align-items-start justify-content-center lg:justify-content-between lg:px-4 py-2 lg:py-0 lg:border-round-xl cursor-pointer hover:bg-blue-700">
+
+    <p class="lg:flex hidden">Prime vue sheet-6, 7, 8, 9, 10</p>
+
+
+  </NuxtLink>
   </div>
 
 </div>

@@ -1,12 +1,12 @@
 <template>
   <div class="card">
     <DataTable  :value="products"  v-model:selection="selectedProduct" dataKey="id" tableStyle="min-width: 50rem">
-<!--      <template #header>-->
-<!--        <div class="flex flex-wrap align-items-center justify-content-between gap-2">-->
-<!--          <span class="text-xl text-900 font-bold">Products</span>-->
-<!--          <Button icon="pi pi-refresh" rounded raised />-->
-<!--        </div>-->
-<!--      </template>-->
+      <!--      <template #header>-->
+      <!--        <div class="flex flex-wrap align-items-center justify-content-between gap-2">-->
+      <!--          <span class="text-xl text-900 font-bold">Products</span>-->
+      <!--          <Button icon="pi pi-refresh" rounded raised />-->
+      <!--        </div>-->
+      <!--      </template>-->
       <Column selectionMode="multiple" headerStyle="width: 3rem"></Column>
 
       <Column field="code" header="Select 4 contacts">
@@ -14,7 +14,7 @@
         <template #body="slotProps">
           <div class="  ">
             <div  class="flex flex-row align-items-center text-xs xl:text-sm  gap-3">
-<!--              <div v-html="slotProps.data.box"></div>-->
+              <!--              <div v-html="slotProps.data.box"></div>-->
 
               <div class="flex   flex-wrap  flex-row justify-content-center align-items-center gap-2">
 
@@ -61,7 +61,7 @@
             <div  class="flex flex-row align-items-center text-gray-400 justify-content-end gap-2 ">
               <div  v-html="slotProps.data.svg"></div>
               <div  v-html="slotProps.data.svg2"></div>
-            <div  v-html="slotProps.data.svg3"></div>
+              <div  v-html="slotProps.data.svg3"></div>
             </div>
           </div>
         </template>
@@ -165,7 +165,7 @@ const products = reactive(    [
         '                            </g>\n' +
         '                          </svg>\n' +
         '                        </div>\n'), box:'checkbox.six'},
-  ] );
+] );
 
 const selectedProduct = ref();
 const metaKey = ref(true);
@@ -207,13 +207,16 @@ function nextPg(){
   if(selectedProduct.value.length > 3 ){
     go.value = true
   }
-  if(selectedProduct.value.length <= 3){
+  if(selectedProduct.value.length < 3){
     go.value = false
   }
   console.log(selectedProduct.value)
   console.log(selectedProduct.value.length)
   console.log(go.value)
 }
+
+
+
 
 
 // function trueCount() {
