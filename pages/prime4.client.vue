@@ -1590,14 +1590,6 @@ function allCheck() {
   }
 }
 
-// const go = ref(null)
-// function trueCount() {
-//   const trueC = Object.values(checkBox).filter(value => value === true).length;
-//   console.log(trueC);
-//   go.value = trueC >= 4;
-//   console.log(go.value)
-// };
-
 
 const toast = ref(true)
 
@@ -1643,10 +1635,9 @@ const Sche = ref([
 const selectedZone = ref();
 const Zone = ref([
   {name: 'Eastern Time', code: 'NY'},
-  {name: 'Eastern Time', code: 'RM'},
-  {name: 'Eastern Time', code: 'LDN'},
-  {name: 'Eastern Time', code: 'IST'},
-  {name: 'Eastern Time', code: 'PRS'}
+  {name: 'Western Time', code: 'RM'},
+  {name: 'Northen Time', code: 'LDN'},
+  {name: 'Southen Time', code: 'IST'},
 ]);
 
 
