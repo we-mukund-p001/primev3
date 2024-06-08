@@ -231,7 +231,7 @@
           <div class=" flex justify-content-center bg-gray-100">
             <div class="flex flex-column  align-items-center md:w-8 lg:w-6 xl:w-5 ">
               <div
-                  class="flex flex-row align-items-center text-xs lg:text-base bg-white hover:bg-purple-50 cursor-pointer p-2 border-round-3xl gap-1 w-5 md:w-4 mt-4">
+                  class="flex flex-row align-items-center justify-content-center text-xs lg:text-base bg-white hover:bg-purple-50 cursor-pointer py-2 border-round-3xl gap-1 w-5 md:w-4 mt-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="text-purple-500" width="1.5em" height="1.5em"
                      viewBox="0 0 24 24">
                   <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -844,7 +844,7 @@
                 <div class="flex md:flex-row flex-column gap-2 w-full">
                   <div class="md:w-6 relative">
                     <label class="text-xs font-semibold" for="username"><p class="my-1"> Send limit</p></label>
-                    <InputText id="username" class="w-full text-sm" v-model="value" placeholder="200"
+                    <InputText  id="username" class="w-full text-sm"  placeholder="200"
                                aria-describedby="username-help"/>
                     <p class=" my-0 text-gray-400 absolute text-sm" style="bottom:16%; right: 3%">per day</p>
                   </div>
@@ -859,7 +859,7 @@
                               d="M12 17.75a.75.75 0 0 0 .75-.75v-6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75M12 7a1 1 0 1 1 0 2a1 1 0 0 1 0-2"/>
                       </svg>
                     </label>
-                    <InputText id="username" class="w-full text-sm" v-model="value" placeholder="5"
+                    <InputText id="username" class="w-full text-sm" placeholder="5"
                                aria-describedby="username-help"/>
                     <p class="my-0 absolute text-gray-400 text-sm" style="bottom:16%; right:3%">seconds</p>
                   </div>
@@ -958,7 +958,7 @@
                             d="M12 17.75a.75.75 0 0 0 .75-.75v-6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75M12 7a1 1 0 1 1 0 2a1 1 0 0 1 0-2"/>
                     </svg>
                   </label>
-                  <InputText type="text" v-model="value " placeholder="add email" class="w-full pl-4 text-sm"/>
+                  <InputText type="text"  placeholder="add email" class="w-full pl-4 text-sm"/>
                   <svg xmlns="http://www.w3.org/2000/svg" class="absolute" style="bottom:16%; left:1%" width="1em"
                        height="1em" viewBox="0 0 48 48">
                     <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -980,7 +980,7 @@
                             d="M12 17.75a.75.75 0 0 0 .75-.75v-6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75M12 7a1 1 0 1 1 0 2a1 1 0 0 1 0-2"/>
                     </svg>
                   </label>
-                  <InputText type="text" v-model="value " placeholder="add email" class="w-full pl-4 text-sm"/>
+                  <InputText type="text" placeholder="add email" class="w-full pl-4 text-sm"/>
                   <svg xmlns="http://www.w3.org/2000/svg" class="absolute" style="bottom:16%; left:1%" width="1em"
                        height="1em" viewBox="0 0 48 48">
                     <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
