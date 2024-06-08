@@ -79,6 +79,7 @@
             <div class="  w-11 md:w-11  lg:w-10 xl:w-7 ">
               <p class="text-xl font-semibold mb-1 mt-2">Selected contacts</p>
               <p class="mb-3 mt-0 text-gray-400 text-sm">Preview a list of contacts that will be included in your campaign</p>
+              <p v-show="!go" class="text-red-500">Select atleast 4 contact*</p>
 
               <Card :pt="{
                 body:{class: 'p-0'}
@@ -90,6 +91,7 @@
                 <Column selectionMode="multiple" headerStyle="width: 3rem"></Column>
 
                 <Column field="code" header="Select 4 contacts">
+
 
                   <template #body="slotProps">
                     <div class="  ">
@@ -604,13 +606,9 @@
                 <!--          subject-->
                 <div
                     class="flex justify-content-between align-items-center border-1 border-x-none border-gray-200  text-xs">
-                  <div class="relative">
-                    <p class=" hidden text-gray-500 font-semibold">
-                      Subject:
-                      <InputText type="text" class="text-xs font-semibold border-white " placeholder="Reaching out"
-                                 v-model="value"/>
-                    </p>
-                    <InputText type="text" class="text-xs font-semibold border-white pl-7 text-black-alpha-70 "
+                  <div class="relative w-8 md:w-6 ">
+
+                    <InputText type="text" class="text-xs font-semibold border-white pl-7 text-black-alpha-70 w-full "
                                placeholder="Reaching out" v-model="value"/>
                     <p class="absolute text-gray-500 font-semibold" style="top:-10%; left:3%">Subject:</p>
                   </div>
@@ -661,10 +659,6 @@
 
                 <Quill/>
 
-                <!--                  <Editor v-model="value" editorStyle="height: 320px" :pt="{-->
-                <!--      root:{class:' flex flex-column-reverse'},-->
-                <!--      header:{class:' text-red-500'}-->
-                <!--    }" />-->
 
 
                 <!--         end buttons-->
@@ -1597,12 +1591,12 @@ function allCheck() {
 }
 
 // const go = ref(null)
-function trueCount() {
-  const trueC = Object.values(checkBox).filter(value => value === true).length;
-  console.log(trueC);
-  go.value = trueC >= 4;
-  console.log(go.value)
-};
+// function trueCount() {
+//   const trueC = Object.values(checkBox).filter(value => value === true).length;
+//   console.log(trueC);
+//   go.value = trueC >= 4;
+//   console.log(go.value)
+// };
 
 
 const toast = ref(true)
@@ -1814,9 +1808,13 @@ const products = reactive([
 const selectedProduct = ref();
 const metaKey = ref(true);
 
-const go = ref(null)
+const go = ref(true)
 
 function nextPg() {
+  if(selectedProduct.value == undefined){
+    go.value = false
+  }
+
   if (selectedProduct.value.length > 3) {
     go.value = true
   }
@@ -1827,6 +1825,7 @@ function nextPg() {
   console.log(selectedProduct.value.length)
   console.log(go.value)
 }
+
 
 </script>
 

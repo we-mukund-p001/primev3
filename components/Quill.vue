@@ -3,7 +3,7 @@
     <QuillEditor toolbar="#my-toolbar" >
       <template #toolbar>
         <div id="my-toolbar">
-          <div class="flex">
+          <div class="flex flex-wrap">
           <!-- Add buttons as you would before -->
           <div class="">
           <button class="ql-bold"></button>
